@@ -77,6 +77,7 @@ NSString * const M2ObjectViewSelectedNotification = @"M2ObjectViewSelected";
     if (!self.isSelected) {
         RKPostNotification(@"M2ObjectViewSelected");
         self.isSelected = YES;
+        [[self superview] addSubview:self];
         [self setNeedsDisplay:YES];
     }
 }
