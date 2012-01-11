@@ -8,9 +8,11 @@
 
 #import "M2ObjectView.h"
 
+NSString * const M2ObjectViewSelectedNotification = @"M2ObjectViewSelected";
+
 @implementation M2ObjectView
 
-@synthesize object, isDragging, isResizing, mouseDownLocation, mouseDownFrame, resizeHandle;
+@synthesize object, isDragging, isResizing, isSelected, mouseDownLocation, mouseDownFrame, resizeHandle;
 
 - (id)initWithFrame:(NSRect)frame
 {
@@ -21,6 +23,7 @@
         self.resizeHandle = [[M2ResizeHandleView alloc] initWithFrame:NSMakeRect(frame.size.width-10, 0, 10, 10)];
         [self.resizeHandle setAutoresizingMask:NSViewMinXMargin];
         [self addSubview:self.resizeHandle];
+        RKObserveNotification(M2ObjectViewSelectedNotification, @selector(didSelectObjectView:));
     }
     
     return self;
@@ -34,6 +37,13 @@
 {
     [[NSColor whiteColor] set];
     NSRectFill([self bounds]);
+    
+    if (self.isSelected) {
+        [[NSColor blueColor] set];
+        NSBezierPath *outline = [NSBezierPath bezierPathWithRect:[self bounds]];
+        [outline setLineWidth:2.0];
+        [outline stroke];
+    }
     
     if (!object) {
         NSLog(@"Error: No object associated with the view");
@@ -64,6 +74,11 @@
     }
     self.mouseDownLocation = [theEvent locationInWindow];
     self.mouseDownFrame = self.frame;
+    if (!self.isSelected) {
+        RKPostNotification(@"M2ObjectViewSelected");
+        self.isSelected = YES;
+        [self setNeedsDisplay:YES];
+    }
 }
 
 - (void)mouseUp:(NSEvent *)theEvent {
@@ -89,6 +104,13 @@
     }
     
     self.frame = frame;
+    [self setNeedsDisplay:YES];
+}
+
+#pragma mark - Selecting
+
+- (void)didSelectObjectView:(NSNotification *)notif {
+    self.isSelected = NO;
     [self setNeedsDisplay:YES];
 }
 

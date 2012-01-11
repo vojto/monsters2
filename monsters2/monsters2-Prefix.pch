@@ -5,3 +5,7 @@
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
 #endif
+
+
+#define RKPostNotification(name) [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:name object:nil]]
+#define RKObserveNotification(notifName,sel) [[NSNotificationCenter defaultCenter] addObserver:self selector:sel name:notifName object:nil]

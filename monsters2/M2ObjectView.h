@@ -15,13 +15,16 @@
 #pragma mark - Model
 @property (retain) M2Object *object;
 
-#pragma mark - Resizing
+#pragma mark - Dragging & Resizing
 @property (retain) NSView *resizeHandle;
-
-#pragma mark - Dragging
 @property (assign) BOOL isDragging;
 @property (assign) BOOL isResizing;
 @property (assign) NSPoint mouseDownLocation;
 @property (assign) NSRect mouseDownFrame;
+
+#pragma mark - Selection
+@property (assign) BOOL isSelected;
+
+- (void)didSelectObjectView:(NSNotification *)notif;
 
 @end
