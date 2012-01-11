@@ -1,0 +1,322 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		99D7839014BD958D0005F6BB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99D7838F14BD958D0005F6BB /* Cocoa.framework */; };
+		99D7839A14BD958D0005F6BB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99D7839814BD958D0005F6BB /* InfoPlist.strings */; };
+		99D7839C14BD958D0005F6BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7839B14BD958D0005F6BB /* main.m */; };
+		99D783A014BD958D0005F6BB /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 99D7839E14BD958D0005F6BB /* Credits.rtf */; };
+		99D783A314BD958D0005F6BB /* M2Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D783A214BD958D0005F6BB /* M2Document.m */; };
+		99D783A614BD958D0005F6BB /* M2Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99D783A414BD958D0005F6BB /* M2Document.xib */; };
+		99D783A914BD958D0005F6BB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99D783A714BD958D0005F6BB /* MainMenu.xib */; };
+		99D783AC14BD958D0005F6BB /* M2Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99D783AA14BD958D0005F6BB /* M2Document.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		99D7838B14BD958D0005F6BB /* monsters2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = monsters2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		99D7838F14BD958D0005F6BB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		99D7839214BD958D0005F6BB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		99D7839314BD958D0005F6BB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		99D7839414BD958D0005F6BB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		99D7839714BD958D0005F6BB /* monsters2-Info.plist */ = {isa = PBXFileReference; path = "monsters2-Info.plist"; sourceTree = "<group>"; };
+		99D7839914BD958D0005F6BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		99D7839B14BD958D0005F6BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		99D7839D14BD958D0005F6BB /* monsters2-Prefix.pch */ = {isa = PBXFileReference; path = "monsters2-Prefix.pch"; sourceTree = "<group>"; };
+		99D7839F14BD958D0005F6BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		99D783A114BD958D0005F6BB /* M2Document.h */ = {isa = PBXFileReference; path = M2Document.h; sourceTree = "<group>"; };
+		99D783A214BD958D0005F6BB /* M2Document.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = M2Document.m; sourceTree = "<group>"; };
+		99D783A514BD958D0005F6BB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/M2Document.xib; sourceTree = "<group>"; };
+		99D783A814BD958D0005F6BB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		99D783AB14BD958D0005F6BB /* M2Document.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = M2Document.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		99D7838814BD958D0005F6BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99D7839014BD958D0005F6BB /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		99D7838014BD958D0005F6BB = {
+			isa = PBXGroup;
+			children = (
+				99D7839514BD958D0005F6BB /* monsters2 */,
+				99D7838E14BD958D0005F6BB /* Frameworks */,
+				99D7838C14BD958D0005F6BB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		99D7838C14BD958D0005F6BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				99D7838B14BD958D0005F6BB /* monsters2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		99D7838E14BD958D0005F6BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99D7838F14BD958D0005F6BB /* Cocoa.framework */,
+				99D7839114BD958D0005F6BB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		99D7839114BD958D0005F6BB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99D7839214BD958D0005F6BB /* AppKit.framework */,
+				99D7839314BD958D0005F6BB /* CoreData.framework */,
+				99D7839414BD958D0005F6BB /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		99D7839514BD958D0005F6BB /* monsters2 */ = {
+			isa = PBXGroup;
+			children = (
+				99D783A114BD958D0005F6BB /* M2Document.h */,
+				99D783A214BD958D0005F6BB /* M2Document.m */,
+				99D783A414BD958D0005F6BB /* M2Document.xib */,
+				99D783A714BD958D0005F6BB /* MainMenu.xib */,
+				99D783AA14BD958D0005F6BB /* M2Document.xcdatamodeld */,
+				99D7839614BD958D0005F6BB /* Supporting Files */,
+			);
+			path = monsters2;
+			sourceTree = "<group>";
+		};
+		99D7839614BD958D0005F6BB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				99D7839714BD958D0005F6BB /* monsters2-Info.plist */,
+				99D7839814BD958D0005F6BB /* InfoPlist.strings */,
+				99D7839B14BD958D0005F6BB /* main.m */,
+				99D7839D14BD958D0005F6BB /* monsters2-Prefix.pch */,
+				99D7839E14BD958D0005F6BB /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		99D7838A14BD958D0005F6BB /* monsters2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99D783AF14BD958D0005F6BB /* Build configuration list for PBXNativeTarget "monsters2" */;
+			buildPhases = (
+				99D7838714BD958D0005F6BB /* Sources */,
+				99D7838814BD958D0005F6BB /* Frameworks */,
+				99D7838914BD958D0005F6BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = monsters2;
+			productName = monsters2;
+			productReference = 99D7838B14BD958D0005F6BB /* monsters2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		99D7838214BD958D0005F6BB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 99D7838514BD958D0005F6BB /* Build configuration list for PBXProject "monsters2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 99D7838014BD958D0005F6BB;
+			productRefGroup = 99D7838C14BD958D0005F6BB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				99D7838A14BD958D0005F6BB /* monsters2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		99D7838914BD958D0005F6BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99D7839A14BD958D0005F6BB /* InfoPlist.strings in Resources */,
+				99D783A014BD958D0005F6BB /* Credits.rtf in Resources */,
+				99D783A614BD958D0005F6BB /* M2Document.xib in Resources */,
+				99D783A914BD958D0005F6BB /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		99D7838714BD958D0005F6BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99D7839C14BD958D0005F6BB /* main.m in Sources */,
+				99D783A314BD958D0005F6BB /* M2Document.m in Sources */,
+				99D783AC14BD958D0005F6BB /* M2Document.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		99D7839814BD958D0005F6BB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				99D7839914BD958D0005F6BB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		99D7839E14BD958D0005F6BB /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				99D7839F14BD958D0005F6BB /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		99D783A414BD958D0005F6BB /* M2Document.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				99D783A514BD958D0005F6BB /* en */,
+			);
+			name = M2Document.xib;
+			sourceTree = "<group>";
+		};
+		99D783A714BD958D0005F6BB /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				99D783A814BD958D0005F6BB /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		99D783AD14BD958D0005F6BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		99D783AE14BD958D0005F6BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		99D783B014BD958D0005F6BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "monsters2/monsters2-Prefix.pch";
+				INFOPLIST_FILE = "monsters2/monsters2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		99D783B114BD958D0005F6BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "monsters2/monsters2-Prefix.pch";
+				INFOPLIST_FILE = "monsters2/monsters2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		99D7838514BD958D0005F6BB /* Build configuration list for PBXProject "monsters2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99D783AD14BD958D0005F6BB /* Debug */,
+				99D783AE14BD958D0005F6BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99D783AF14BD958D0005F6BB /* Build configuration list for PBXNativeTarget "monsters2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99D783B014BD958D0005F6BB /* Debug */,
+				99D783B114BD958D0005F6BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		99D783AA14BD958D0005F6BB /* M2Document.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				99D783AB14BD958D0005F6BB /* M2Document.xcdatamodel */,
+			);
+			currentVersion = 99D783AB14BD958D0005F6BB /* M2Document.xcdatamodel */;
+			path = M2Document.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 99D7838214BD958D0005F6BB /* Project object */;
+}
