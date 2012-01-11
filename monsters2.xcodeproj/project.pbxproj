@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99452FE714BDFB3900CAD47A /* M2ResizeHandleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99452FE614BDFB3900CAD47A /* M2ResizeHandleView.m */; };
+		99452FF114BE015D00CAD47A /* M2LibObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 99452FF014BE015D00CAD47A /* M2LibObject.m */; };
+		99631B2914BDF0FC00E0576A /* M2Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 99631B2814BDF0FC00E0576A /* M2Object.m */; };
 		99D7839014BD958D0005F6BB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99D7838F14BD958D0005F6BB /* Cocoa.framework */; };
 		99D7839A14BD958D0005F6BB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99D7839814BD958D0005F6BB /* InfoPlist.strings */; };
 		99D7839C14BD958D0005F6BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D7839B14BD958D0005F6BB /* main.m */; };
@@ -15,24 +18,38 @@
 		99D783A614BD958D0005F6BB /* M2Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99D783A414BD958D0005F6BB /* M2Document.xib */; };
 		99D783A914BD958D0005F6BB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99D783A714BD958D0005F6BB /* MainMenu.xib */; };
 		99D783AC14BD958D0005F6BB /* M2Document.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99D783AA14BD958D0005F6BB /* M2Document.xcdatamodeld */; };
+		99D783B414BD9E490005F6BB /* M2DocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D783B314BD9E490005F6BB /* M2DocumentController.m */; };
+		99D783E614BDA1A20005F6BB /* M2Shared.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99D783E414BDA1A20005F6BB /* M2Shared.xcdatamodeld */; };
+		99D783EC14BDA4B80005F6BB /* M2ObjectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D783EB14BDA4B80005F6BB /* M2ObjectView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		99452FE514BDFB3900CAD47A /* M2ResizeHandleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2ResizeHandleView.h; sourceTree = "<group>"; };
+		99452FE614BDFB3900CAD47A /* M2ResizeHandleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2ResizeHandleView.m; sourceTree = "<group>"; };
+		99452FEF14BE015D00CAD47A /* M2LibObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2LibObject.h; sourceTree = "<group>"; };
+		99452FF014BE015D00CAD47A /* M2LibObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2LibObject.m; sourceTree = "<group>"; };
+		99631B2714BDF0FC00E0576A /* M2Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2Object.h; sourceTree = "<group>"; };
+		99631B2814BDF0FC00E0576A /* M2Object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2Object.m; sourceTree = "<group>"; };
 		99D7838B14BD958D0005F6BB /* monsters2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = monsters2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99D7838F14BD958D0005F6BB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		99D7839214BD958D0005F6BB /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		99D7839314BD958D0005F6BB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		99D7839414BD958D0005F6BB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		99D7839714BD958D0005F6BB /* monsters2-Info.plist */ = {isa = PBXFileReference; path = "monsters2-Info.plist"; sourceTree = "<group>"; };
+		99D7839714BD958D0005F6BB /* monsters2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "monsters2-Info.plist"; sourceTree = "<group>"; };
 		99D7839914BD958D0005F6BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		99D7839B14BD958D0005F6BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		99D7839D14BD958D0005F6BB /* monsters2-Prefix.pch */ = {isa = PBXFileReference; path = "monsters2-Prefix.pch"; sourceTree = "<group>"; };
+		99D7839D14BD958D0005F6BB /* monsters2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "monsters2-Prefix.pch"; sourceTree = "<group>"; };
 		99D7839F14BD958D0005F6BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		99D783A114BD958D0005F6BB /* M2Document.h */ = {isa = PBXFileReference; path = M2Document.h; sourceTree = "<group>"; };
+		99D783A114BD958D0005F6BB /* M2Document.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M2Document.h; sourceTree = "<group>"; };
 		99D783A214BD958D0005F6BB /* M2Document.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = M2Document.m; sourceTree = "<group>"; };
 		99D783A514BD958D0005F6BB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/M2Document.xib; sourceTree = "<group>"; };
 		99D783A814BD958D0005F6BB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		99D783AB14BD958D0005F6BB /* M2Document.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = M2Document.xcdatamodel; sourceTree = "<group>"; };
+		99D783B214BD9E490005F6BB /* M2DocumentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2DocumentController.h; sourceTree = "<group>"; };
+		99D783B314BD9E490005F6BB /* M2DocumentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2DocumentController.m; sourceTree = "<group>"; };
+		99D783E514BDA1A20005F6BB /* M2Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = M2Shared.xcdatamodel; sourceTree = "<group>"; };
+		99D783EA14BDA4B80005F6BB /* M2ObjectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2ObjectView.h; sourceTree = "<group>"; };
+		99D783EB14BDA4B80005F6BB /* M2ObjectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2ObjectView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,11 +103,10 @@
 		99D7839514BD958D0005F6BB /* monsters2 */ = {
 			isa = PBXGroup;
 			children = (
-				99D783A114BD958D0005F6BB /* M2Document.h */,
-				99D783A214BD958D0005F6BB /* M2Document.m */,
-				99D783A414BD958D0005F6BB /* M2Document.xib */,
-				99D783A714BD958D0005F6BB /* MainMenu.xib */,
-				99D783AA14BD958D0005F6BB /* M2Document.xcdatamodeld */,
+				99D783E714BDA4940005F6BB /* System Controllers */,
+				99D783E814BDA49E0005F6BB /* Models */,
+				99D783E914BDA4A60005F6BB /* User Interfaces */,
+				99D783ED14BDA4BD0005F6BB /* Views */,
 				99D7839614BD958D0005F6BB /* Supporting Files */,
 			);
 			path = monsters2;
@@ -106,6 +122,50 @@
 				99D7839E14BD958D0005F6BB /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		99D783E714BDA4940005F6BB /* System Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				99D783A114BD958D0005F6BB /* M2Document.h */,
+				99D783A214BD958D0005F6BB /* M2Document.m */,
+				99D783B214BD9E490005F6BB /* M2DocumentController.h */,
+				99D783B314BD9E490005F6BB /* M2DocumentController.m */,
+			);
+			name = "System Controllers";
+			sourceTree = "<group>";
+		};
+		99D783E814BDA49E0005F6BB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				99D783AA14BD958D0005F6BB /* M2Document.xcdatamodeld */,
+				99D783E414BDA1A20005F6BB /* M2Shared.xcdatamodeld */,
+				99452FEF14BE015D00CAD47A /* M2LibObject.h */,
+				99452FF014BE015D00CAD47A /* M2LibObject.m */,
+				99631B2714BDF0FC00E0576A /* M2Object.h */,
+				99631B2814BDF0FC00E0576A /* M2Object.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		99D783E914BDA4A60005F6BB /* User Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				99D783A414BD958D0005F6BB /* M2Document.xib */,
+				99D783A714BD958D0005F6BB /* MainMenu.xib */,
+			);
+			name = "User Interfaces";
+			sourceTree = "<group>";
+		};
+		99D783ED14BDA4BD0005F6BB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				99D783EA14BDA4B80005F6BB /* M2ObjectView.h */,
+				99D783EB14BDA4B80005F6BB /* M2ObjectView.m */,
+				99452FE514BDFB3900CAD47A /* M2ResizeHandleView.h */,
+				99452FE614BDFB3900CAD47A /* M2ResizeHandleView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +235,12 @@
 				99D7839C14BD958D0005F6BB /* main.m in Sources */,
 				99D783A314BD958D0005F6BB /* M2Document.m in Sources */,
 				99D783AC14BD958D0005F6BB /* M2Document.xcdatamodeld in Sources */,
+				99D783B414BD9E490005F6BB /* M2DocumentController.m in Sources */,
+				99D783E614BDA1A20005F6BB /* M2Shared.xcdatamodeld in Sources */,
+				99D783EC14BDA4B80005F6BB /* M2ObjectView.m in Sources */,
+				99631B2914BDF0FC00E0576A /* M2Object.m in Sources */,
+				99452FE714BDFB3900CAD47A /* M2ResizeHandleView.m in Sources */,
+				99452FF114BE015D00CAD47A /* M2LibObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +368,7 @@
 				99D783B114BD958D0005F6BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -313,6 +380,16 @@
 			);
 			currentVersion = 99D783AB14BD958D0005F6BB /* M2Document.xcdatamodel */;
 			path = M2Document.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		99D783E414BDA1A20005F6BB /* M2Shared.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				99D783E514BDA1A20005F6BB /* M2Shared.xcdatamodel */,
+			);
+			currentVersion = 99D783E514BDA1A20005F6BB /* M2Shared.xcdatamodel */;
+			path = M2Shared.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

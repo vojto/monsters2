@@ -7,7 +7,18 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "M2DocumentController.h"
 
 @interface M2Document : NSPersistentDocument
+
+@property (readonly) M2DocumentController *documentController;
+@property (readonly) NSManagedObjectContext *sharedContext;
+@property (assign) IBOutlet NSArrayController *libObjectsController;
+
+@property (assign) IBOutlet NSView *canvasView;
+
+- (IBAction)testAction:(id)sender;
+- (IBAction)instantiateAction:(id)sender;
+
 
 @end
