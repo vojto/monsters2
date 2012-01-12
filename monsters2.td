@@ -18,7 +18,7 @@ Canvas
 ------
 
 ✓ Save canvas to file
-☐ Remove object from canvas
+● Remove object from canvas
 
 Saving
 ------

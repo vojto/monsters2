@@ -15,5 +15,6 @@
 @property (retain) NSMutableArray *objectViews;
 
 - (void)objectViewDidChange:(M2ObjectView *)objectView;
+- (void)objectViewDidSelect:(M2ObjectView *)objectView;
 
 @end

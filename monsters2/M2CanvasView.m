@@ -19,9 +19,10 @@
     self.objectViews = [NSMutableArray array];
     NSLog(@"observing this array controller -> %@", self.objectsController);
     [self.objectsController addObserver:self forKeyPath:@"arrangedObjects" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:nil];
+    [self.objectsController addObserver:self forKeyPath:@"selectedObjects" options:0 context:nil];
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+- (void)_updateObjects {
     [[self subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self.objectViews removeAllObjects];
     
@@ -36,10 +37,36 @@
     }
 }
 
+- (void)_updateSelection {
+    NSIndexSet *indexes = [self.objectsController selectionIndexes];
+    if ([indexes count] == 0) return;
+    NSInteger index = [indexes lastIndex];
+    NSLog(@"Updating selection according to index %d", (int)index);
+    M2ObjectView *objectView = [self.objectViews objectAtIndex:index];
+    [objectView makeSelected];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"arrangedObjects"]) {
+        [self _updateObjects];
+    } else if ([keyPath isEqualToString:@"selectedObjects"]) {
+        [self _updateSelection];
+    }
+}
+
+- (M2CanvasObject *)_canvasObjetForView:(M2ObjectView *)view {
+    NSInteger index = [self.objectViews indexOfObject:view];
+    return [[self.objectsController arrangedObjects] objectAtIndex:index];
+}
+
 - (void)objectViewDidChange:(M2ObjectView *)objectView {
-    NSInteger index = [self.objectViews indexOfObject:objectView];
-    M2CanvasObject *canvasObject = [[self.objectsController arrangedObjects] objectAtIndex:index];
+    M2CanvasObject *canvasObject = [self _canvasObjetForView:objectView];
     canvasObject.frame = NSStringFromRect(objectView.frame);
+}
+
+- (void)objectViewDidSelect:(M2ObjectView *)objectView {
+    M2CanvasObject *canvasObject = [self _canvasObjetForView:objectView];
+    [self.objectsController setSelectedObjects:[NSArray arrayWithObject:canvasObject]];
 }
 
 @end

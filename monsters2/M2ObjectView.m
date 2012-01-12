@@ -75,12 +75,7 @@ NSString * const M2ObjectViewSelectedNotification = @"M2ObjectViewSelected";
     }
     self.mouseDownLocation = [theEvent locationInWindow];
     self.mouseDownFrame = self.frame;
-    if (!self.isSelected) {
-        RKPostNotification(@"M2ObjectViewSelected");
-        self.isSelected = YES;
-        [[self superview] addSubview:self];
-        [self setNeedsDisplay:YES];
-    }
+    [self makeSelected];
 }
 
 - (void)mouseUp:(NSEvent *)theEvent {
@@ -115,6 +110,16 @@ NSString * const M2ObjectViewSelectedNotification = @"M2ObjectViewSelected";
 - (void)didSelectObjectView:(NSNotification *)notif {
     self.isSelected = NO;
     [self setNeedsDisplay:YES];
+}
+
+- (void)makeSelected {
+    if (!self.isSelected) {
+        RKPostNotification(@"M2ObjectViewSelected");
+        [self.canvasView objectViewDidSelect:self];
+        self.isSelected = YES;
+        [[self superview] addSubview:self];
+        [self setNeedsDisplay:YES];
+    }
 }
 
 @end

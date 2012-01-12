@@ -31,5 +31,6 @@
 @property (assign) BOOL isSelected;
 
 - (void)didSelectObjectView:(NSNotification *)notif;
+- (void)makeSelected;
 
 @end

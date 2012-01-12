@@ -21,6 +21,7 @@
 
 - (IBAction)testAction:(id)sender;
 - (IBAction)instantiateAction:(id)sender;
+- (IBAction)removeAction:(id)sender;
 
 //- (void)removeCanvasObject:(M2CanvasObject *)canvasObject;
 

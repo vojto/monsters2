@@ -108,15 +108,13 @@
     canvasObject.frame = NSStringFromRect(NSMakeRect(30, 30, 500, 500));
     NSLog(@"Adding new object to canvasObjectsController: %@", canvasObject);
     [self.canvasObjectsController addObject:canvasObject];
-    
-//    M2Object *object = [NSKeyedUnarchiver unarchiveObjectWithData:libObject.object];
-    
-//    M2ObjectView *view = [[M2ObjectView alloc] initWithFrame:];
-//    view.object = object;
-    //    view.object = object1;
-    // TODO: Create CanvasObject and shit
-//    [self.canvasView addSubview:view];
-    
+}
+
+#pragma mark - Removing Objects
+
+- (void)removeAction:(id)sender {
+    M2CanvasObject *selected = [[self.canvasObjectsController selectedObjects] lastObject];
+    if (selected) [self.canvasObjectsController removeObject:selected];
 }
 
 @end

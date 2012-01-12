@@ -148,7 +148,7 @@
 																			<string key="NSFrameSize">{177, 296}</string>
 																			<reference key="NSSuperview" ref="241823299"/>
 																			<reference key="NSWindow"/>
-																			<reference key="NSNextKeyView" ref="84027592"/>
+																			<reference key="NSNextKeyView" ref="685968411"/>
 																			<string key="NSReuseIdentifierKey">_NS:1828</string>
 																			<bool key="NSEnabled">YES</bool>
 																			<object class="NSTableHeaderView" key="NSHeaderView" id="356672776">
@@ -334,7 +334,7 @@
 															<string key="NSFrame">{{0, 32}, {179, 314}}</string>
 															<reference key="NSSuperview" ref="401763115"/>
 															<reference key="NSWindow"/>
-															<reference key="NSNextKeyView" ref="685968411"/>
+															<reference key="NSNextKeyView" ref="241823299"/>
 															<string key="NSReuseIdentifierKey">_NS:1824</string>
 															<int key="NSsFlags">133682</int>
 															<reference key="NSVScroller" ref="84027592"/>
@@ -358,7 +358,6 @@
 													<string key="NSFrame">{{0, 356}, {179, 353}}</string>
 													<reference key="NSSuperview" ref="832743238"/>
 													<reference key="NSWindow"/>
-													<reference key="NSNextKeyView"/>
 													<string key="NSReuseIdentifierKey">_NS:1116</string>
 													<string key="NSClassName">NSView</string>
 												</object>
@@ -421,7 +420,6 @@
 					<string key="NSEntityName">CanvasObject</string>
 				</object>
 				<bool key="_NSIsUsingManagedProxy">YES</bool>
-				<bool key="NSAvoidsEmptySelection">YES</bool>
 				<bool key="NSPreservesSelection">YES</bool>
 				<bool key="NSSelectsInsertedObjects">YES</bool>
 				<bool key="NSFilterRestrictsInsertion">YES</bool>
@@ -837,11 +835,16 @@
 					<string key="superclassName">NSPersistentDocument</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="instantiateAction:">id</string>
+						<string key="removeAction:">id</string>
 						<string key="testAction:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="instantiateAction:">
 							<string key="name">instantiateAction:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="removeAction:">
+							<string key="name">removeAction:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="testAction:">
