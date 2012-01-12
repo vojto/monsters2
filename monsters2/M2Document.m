@@ -223,8 +223,6 @@
     [imageData writeToFile:[url path] atomically:NO];
 }
 
-- (IBAction)printAction:(id)sender {
-}
 
 #pragma mark - General helpers
 
@@ -236,6 +234,17 @@
 
 - (NSArray *)exportFormats {
     return [NSArray arrayWithObjects:@"JPG", @"BMP", nil];
+}
+
+#pragma mark - Printing
+
+- (NSPrintOperation *)printOperationWithSettings:(NSDictionary *)printSettings error:(NSError **)outError {
+    NSPrintInfo *info = [self printInfo];
+    [info setScalingFactor:0.5];
+    NSPrintOperation *op = [NSPrintOperation
+                            printOperationWithView:self.canvasView
+                            printInfo:info];
+    return op;
 }
 
 @end

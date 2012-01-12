@@ -7,6 +7,7 @@
 //
 
 #import "M2ResizeHandleView.h"
+#import "M2ObjectView.h"
 
 @implementation M2ResizeHandleView
 
@@ -21,8 +22,10 @@
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
-    [[NSColor grayColor] set];
-    NSRectFill([self bounds]);
+    if ([NSGraphicsContext currentContextDrawingToScreen] && [(M2ObjectView *)self.superview isSelected]) {
+        [[NSColor grayColor] set];
+        NSRectFill([self bounds]);
+    }
 }
 
 @end

@@ -96,8 +96,10 @@
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
-    [[NSColor colorWithPatternImage:[NSImage imageNamed:@"canvas-pattern.png"]] set];
-    NSRectFill(dirtyRect);
+    if ([NSGraphicsContext currentContextDrawingToScreen]) {
+        [[NSColor colorWithPatternImage:[NSImage imageNamed:@"canvas-pattern.png"]] set];
+        NSRectFill(dirtyRect);
+    }
     [super drawRect:dirtyRect];
 }
 
