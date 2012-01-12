@@ -22,6 +22,7 @@
 		9914268014BF4D2000B849BD /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914266E14BF4D2000B849BD /* NSPersistentStoreCoordinator+MagicalRecord.m */; };
 		9914268114BF4D2000B849BD /* MagicalRecordHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914267114BF4D2000B849BD /* MagicalRecordHelpers.m */; };
 		9914268214BF4D2000B849BD /* MRCoreDataAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914267414BF4D2000B849BD /* MRCoreDataAction.m */; };
+		9914268514BF510F00B849BD /* M2GalleryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914268414BF510F00B849BD /* M2GalleryController.m */; };
 		99452FE714BDFB3900CAD47A /* M2ResizeHandleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99452FE614BDFB3900CAD47A /* M2ResizeHandleView.m */; };
 		99452FF114BE015D00CAD47A /* M2LibObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 99452FF014BE015D00CAD47A /* M2LibObject.m */; };
 		99631B2914BDF0FC00E0576A /* M2Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 99631B2814BDF0FC00E0576A /* M2Object.m */; };
@@ -74,6 +75,8 @@
 		9914267214BF4D2000B849BD /* MagicalRecordShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordShorthand.h; sourceTree = "<group>"; };
 		9914267314BF4D2000B849BD /* MRCoreDataAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRCoreDataAction.h; sourceTree = "<group>"; };
 		9914267414BF4D2000B849BD /* MRCoreDataAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRCoreDataAction.m; sourceTree = "<group>"; };
+		9914268314BF510F00B849BD /* M2GalleryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2GalleryController.h; sourceTree = "<group>"; };
+		9914268414BF510F00B849BD /* M2GalleryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2GalleryController.m; sourceTree = "<group>"; };
 		99452FE514BDFB3900CAD47A /* M2ResizeHandleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2ResizeHandleView.h; sourceTree = "<group>"; };
 		99452FE614BDFB3900CAD47A /* M2ResizeHandleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2ResizeHandleView.m; sourceTree = "<group>"; };
 		99452FEF14BE015D00CAD47A /* M2LibObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2LibObject.h; sourceTree = "<group>"; };
@@ -221,7 +224,7 @@
 			children = (
 				991425A614BF497400B849BD /* Vendor */,
 				99F3C05F14BEE28200E61E05 /* Resources */,
-				99D783E714BDA4940005F6BB /* System Controllers */,
+				99D783E714BDA4940005F6BB /* Controllers */,
 				99D783E814BDA49E0005F6BB /* Models */,
 				99D783E914BDA4A60005F6BB /* User Interfaces */,
 				99D783ED14BDA4BD0005F6BB /* Views */,
@@ -242,15 +245,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		99D783E714BDA4940005F6BB /* System Controllers */ = {
+		99D783E714BDA4940005F6BB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				99D783A114BD958D0005F6BB /* M2Document.h */,
 				99D783A214BD958D0005F6BB /* M2Document.m */,
 				99D783B214BD9E490005F6BB /* M2DocumentController.h */,
 				99D783B314BD9E490005F6BB /* M2DocumentController.m */,
+				9914268314BF510F00B849BD /* M2GalleryController.h */,
+				9914268414BF510F00B849BD /* M2GalleryController.m */,
 			);
-			name = "System Controllers";
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		99D783E814BDA49E0005F6BB /* Models */ = {
@@ -391,6 +396,7 @@
 				9914268014BF4D2000B849BD /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				9914268114BF4D2000B849BD /* MagicalRecordHelpers.m in Sources */,
 				9914268214BF4D2000B849BD /* MRCoreDataAction.m in Sources */,
+				9914268514BF510F00B849BD /* M2GalleryController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

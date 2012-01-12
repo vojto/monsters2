@@ -26,5 +26,5 @@ Saving
 ------
 
 ✓ Save file to gallery
-☐ View files in gallery
+✓ View files in gallery
 ☐ Export file to JPG, BMP, etc.

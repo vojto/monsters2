@@ -181,7 +181,7 @@
         entry = [NSEntityDescription insertNewObjectForEntityForName:@"GalleryEntry" inManagedObjectContext:self.sharedContext];
     }
     
-    entry.name = name;
+    entry.name = [name stringByReplacingOccurrencesOfString:@".xml" withString:@""];
     entry.path = [url path];
     entry.thumbnail = [self _thumbnailData];
     [self.sharedContext save:nil];
