@@ -4,8 +4,8 @@ monsters2
 Composing
 ---------
 
-☐ Multi-shape objects
-☐ Stroke and fill colors in objects
+✓ Multi-shape objects
+● Stroke and fill colors in objects
 
 ☐ Apply affine transforms from inspect menu
 
@@ -18,7 +18,7 @@ Canvas
 ------
 
 ✓ Save canvas to file
-● Remove object from canvas
+✓ Remove object from canvas
 
 Saving
 ------

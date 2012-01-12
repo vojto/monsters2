@@ -37,7 +37,7 @@ NSString * const M2ObjectViewSelectedNotification = @"M2ObjectViewSelected";
 - (void)drawRect:(NSRect)dirtyRect
 {
     [[NSColor whiteColor] set];
-    NSRectFill([self bounds]);
+//    NSRectFill([self bounds]);
     
     if (self.isSelected) {
         [[NSColor blueColor] set];
