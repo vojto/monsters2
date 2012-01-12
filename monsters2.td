@@ -14,7 +14,7 @@ Library
 -------
 
 ✓ Create thumbnail for library object
-● Display thumbnail in the library
+✓ Display thumbnail in the library
 
 Canvas
 ------
