@@ -21,6 +21,8 @@
 @property (assign) IBOutlet NSArrayController *canvasObjectsController;
 
 @property (assign) IBOutlet NSButton *galleryAddButton;
+@property (assign) IBOutlet NSView *exportView;
+@property (assign) IBOutlet NSPopUpButton *exportFormatButton;
 
 - (IBAction)testAction:(id)sender;
 - (IBAction)instantiateAction:(id)sender;
@@ -38,5 +40,9 @@
 
 #pragma mark - General helpers
 - (NSWindow *)window;
+
+#pragma mark - Exporting
+- (NSArray *)exportFormats;
+- (void)exportToURL:(NSURL *)url withFormat:(NSString *)format;
 
 @end

@@ -15,10 +15,12 @@
 #import "M2GalleryEntry.h"
 
 @implementation M2Document
+@synthesize exportFormatButton;
 @synthesize libObjectsController;
 @synthesize canvasView;
 @synthesize canvasObjectsController;
 @synthesize galleryAddButton;
+@synthesize exportView;
 
 - (id)init {
     self = [super init];
@@ -192,6 +194,33 @@
 }
 
 - (IBAction)exportAction:(id)sender {
+    NSSavePanel *panel = [NSSavePanel savePanel];
+    [panel setAccessoryView:self.exportView];
+//    [panel setAllowedFileTypes:[NSArray arrayWithObjects:@"jpg", @"bmp", nil]];
+    [panel setAllowsOtherFileTypes:NO];
+    [panel setExtensionHidden:NO];
+    [panel beginSheetModalForWindow:[self window] completionHandler:^(NSInteger result) {
+        NSURL *url = [panel URL];
+        NSString *format = [self.exportFormatButton titleOfSelectedItem];
+        [self exportToURL:url withFormat:format];
+    }];
+}
+
+- (void)exportToURL:(NSURL *)url withFormat:(NSString *)format {
+    url = [url URLByAppendingPathExtension:[format lowercaseString]];
+    NSImage *image = [self.canvasView contentsImage];
+    NSData *imageData = [image TIFFRepresentation];
+    NSBitmapImageRep *imageRep = [NSBitmapImageRep imageRepWithData:imageData];
+    if ([format isEqualToString:@"JPG"]) {
+        NSDictionary *imageProps = [NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:0.7] forKey:NSImageCompressionFactor];
+        imageData = [imageRep representationUsingType:NSJPEGFileType properties:imageProps];
+    } else if ([format isEqualToString:@"BMP"]) {
+        imageData = [imageRep representationUsingType:NSBMPFileType properties:nil];
+    } else {
+        NSLog(@"Error: Unknown format %@", format);
+    }
+    
+    [imageData writeToFile:[url path] atomically:NO];
 }
 
 - (IBAction)printAction:(id)sender {
@@ -201,6 +230,12 @@
 
 - (NSWindow *)window {
     return [[[self windowControllers] lastObject] window];
+}
+
+#pragma mark - Exporting
+
+- (NSArray *)exportFormats {
+    return [NSArray arrayWithObjects:@"JPG", @"BMP", nil];
 }
 
 @end
