@@ -20,6 +20,7 @@
     NSLog(@"observing this array controller -> %@", self.objectsController);
     [self.objectsController addObserver:self forKeyPath:@"arrangedObjects" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:nil];
     [self.objectsController addObserver:self forKeyPath:@"selectedObjects" options:0 context:nil];
+    [self.objectsController addObserver:self forKeyPath:@"selection.rotation" options:0 context:nil];
 }
 
 - (void)_updateObjects {
@@ -32,18 +33,29 @@
         M2ObjectView *view = [[M2ObjectView alloc] initWithFrame:rect];
         view.canvasView = self;
         view.object = object;
+        view.rotation = [canvasObject.rotation floatValue];
         [self addSubview:view];
         [self.objectViews addObject:view];
     }
 }
 
-- (void)_updateSelection {
+- (M2ObjectView *)_viewForSelection {
     NSIndexSet *indexes = [self.objectsController selectionIndexes];
-    if ([indexes count] == 0) return;
+    if ([indexes count] == 0) return nil;
     NSInteger index = [indexes lastIndex];
-    NSLog(@"Updating selection according to index %d", (int)index);
-    M2ObjectView *objectView = [self.objectViews objectAtIndex:index];
-    [objectView makeSelected];
+    return [self.objectViews objectAtIndex:index];
+}
+
+- (void)_updateSelection {
+    M2ObjectView *objectView = [self _viewForSelection];
+    if (objectView) [objectView makeSelected];
+}
+
+- (void)_updateRotationOfSelection {
+    M2ObjectView *view = [self _viewForSelection];
+    M2CanvasObject *object = [[self.objectsController selectedObjects] lastObject];
+    if (!object) return;
+    [view rotate:[object.rotation floatValue]];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -51,6 +63,8 @@
         [self _updateObjects];
     } else if ([keyPath isEqualToString:@"selectedObjects"]) {
         [self _updateSelection];
+    } else if ([keyPath isEqualToString:@"selection.rotation"]) {
+        [self _updateRotationOfSelection];
     }
 }
 

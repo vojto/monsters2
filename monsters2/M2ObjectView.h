@@ -33,4 +33,8 @@
 - (void)didSelectObjectView:(NSNotification *)notif;
 - (void)makeSelected;
 
+#pragma mark - Rotation
+@property (assign) CGFloat rotation;
+- (void)rotate:(CGFloat)rotation;
+
 @end

@@ -14,6 +14,7 @@ NSString * const M2ObjectViewSelectedNotification = @"M2ObjectViewSelected";
 @implementation M2ObjectView
 
 @synthesize object, isDragging, isResizing, isSelected, mouseDownLocation, mouseDownFrame, resizeHandle, canvasView;
+@synthesize rotation;
 
 - (id)initWithFrame:(NSRect)frame
 {
@@ -21,6 +22,7 @@ NSString * const M2ObjectViewSelectedNotification = @"M2ObjectViewSelected";
     if (self) {
         self.isDragging = NO;
         self.isResizing = NO;
+        self.rotation = 0.0;
         self.resizeHandle = [[M2ResizeHandleView alloc] initWithFrame:NSMakeRect(frame.size.width-10, 0, 10, 10)];
         [self.resizeHandle setAutoresizingMask:NSViewMinXMargin];
         [self addSubview:self.resizeHandle];
@@ -59,8 +61,13 @@ NSString * const M2ObjectViewSelectedNotification = @"M2ObjectViewSelected";
         NSColor *stroke = [wrapper objectForKey:@"stroke"];
         // TODO: Frame, stroke, background, etc.
         NSAffineTransform *transform = [NSAffineTransform transform];
-        float x = [self bounds].size.width / object.bounds.width;
-        float y = [self bounds].size.height / object.bounds.height;
+        NSSize size = [self bounds].size;
+        float x = size.width / object.bounds.width;
+        float y = size.height / object.bounds.height;
+        [transform translateXBy:size.width/2 yBy:size.height/2];
+        [transform rotateByDegrees:self.rotation];
+        [transform translateXBy:-size.width/2 yBy:-size.height/2];
+//        [transform rotateByDegrees:10.0];
         [transform scaleXBy:x yBy:y];
         [path transformUsingAffineTransform:transform];
         [background set];
@@ -124,6 +131,13 @@ NSString * const M2ObjectViewSelectedNotification = @"M2ObjectViewSelected";
         [[self superview] addSubview:self];
         [self setNeedsDisplay:YES];
     }
+}
+
+#pragma mark - Rotation
+
+- (void)rotate:(CGFloat)aRotation {
+    self.rotation = aRotation;
+    [self setNeedsDisplay:YES];
 }
 
 @end

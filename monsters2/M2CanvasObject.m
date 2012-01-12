@@ -13,5 +13,6 @@
 
 @dynamic object;
 @dynamic frame;
+@dynamic rotation;
 
 @end
