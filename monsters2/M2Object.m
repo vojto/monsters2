@@ -20,7 +20,13 @@
 }
 
 - (void)addPath:(NSBezierPath *)path {
-    NSDictionary *wrapper = [NSDictionary dictionaryWithObject:[path copy] forKey:@"path"];
+    [self addPath:path withBackground:[NSColor whiteColor] stroke:[NSColor blackColor]];
+}
+
+- (void)addPath:(NSBezierPath *)path withBackground:(NSColor *)background stroke:(NSColor *)stroke {
+    NSDictionary *wrapper = [NSDictionary dictionaryWithObjectsAndKeys:[path copy], @"path",
+                             background, @"background",
+                             stroke, @"stroke", nil];
     [self.paths addObject:wrapper];
 }
 

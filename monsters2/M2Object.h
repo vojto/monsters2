@@ -22,5 +22,6 @@
 @property (retain) NSMutableArray *paths;
 
 - (void)addPath:(NSBezierPath *)path;
+- (void)addPath:(NSBezierPath *)path withBackground:(NSColor *)background stroke:(NSColor *)stroke;
 
 @end

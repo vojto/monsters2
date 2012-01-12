@@ -51,17 +51,21 @@ NSString * const M2ObjectViewSelectedNotification = @"M2ObjectViewSelected";
         return;
     }
     
-    [[NSColor blueColor] set];
-    
+
     NSArray *paths = object.paths;
     for (NSDictionary *wrapper in paths) {
         NSBezierPath *path = [[wrapper objectForKey:@"path"] copy];
+        NSColor *background = [wrapper objectForKey:@"background"];
+        NSColor *stroke = [wrapper objectForKey:@"stroke"];
         // TODO: Frame, stroke, background, etc.
         NSAffineTransform *transform = [NSAffineTransform transform];
         float x = [self bounds].size.width / object.bounds.width;
         float y = [self bounds].size.height / object.bounds.height;
         [transform scaleXBy:x yBy:y];
         [path transformUsingAffineTransform:transform];
+        [background set];
+        [path fill];
+        [stroke set];
         [path setLineWidth:3.0];
         [path stroke];
     }
