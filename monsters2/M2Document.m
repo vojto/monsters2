@@ -11,25 +11,22 @@
 #import "M2Object.h"
 #import "M2LibObject.h"
 #import "M2ObjectView.h"
+#import "M2CanvasObject.h"
 
 @implementation M2Document
 @synthesize libObjectsController;
 @synthesize canvasView;
+@synthesize canvasObjectsController;
 
-- (id)init
-{
+- (id)init {
     self = [super init];
     if (self) {
-        // Add your subclass-specific initialization here.
-        // If an error occurs here, return nil.
+
     }
     return self;
 }
 
-- (NSString *)windowNibName
-{
-    // Override returning the nib file name of the document
-    // If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this method and override -makeWindowControllers instead.
+- (NSString *)windowNibName {
     return @"M2Document";
 }
 
@@ -44,9 +41,15 @@
     return NO;
 }
 
+/*
 - (void)saveToFile:(NSString *)fileName saveOperation:(NSSaveOperationType)saveOperation delegate:(id)delegate didSaveSelector:(SEL)didSaveSelector contextInfo:(void *)contextInfo {
     [super saveToFile:fileName saveOperation:saveOperation delegate:delegate didSaveSelector:didSaveSelector contextInfo:contextInfo];
     [self.documentController saveShared];
+}
+ */
+
+- (BOOL)writeToURL:(NSURL *)absoluteURL ofType:(NSString *)typeName forSaveOperation:(NSSaveOperationType)saveOperation originalContentsURL:(NSURL *)absoluteOriginalContentsURL error:(NSError **)error {
+    return [super writeToURL:absoluteURL ofType:typeName forSaveOperation:saveOperation originalContentsURL:absoluteOriginalContentsURL error:error];
 }
 
 - (M2DocumentController *)documentController {
@@ -100,13 +103,19 @@
 - (IBAction)instantiateAction:(id)sender {
     NSArray *selected = self.libObjectsController.selectedObjects;
     M2LibObject *libObject = [selected lastObject];
-    M2Object *object = [NSKeyedUnarchiver unarchiveObjectWithData:libObject.object];
+    M2CanvasObject *canvasObject = [NSEntityDescription insertNewObjectForEntityForName:@"CanvasObject" inManagedObjectContext:self.managedObjectContext];
+    canvasObject.object = [libObject.object copy];
+    canvasObject.frame = NSStringFromRect(NSMakeRect(30, 30, 500, 500));
+    NSLog(@"Adding new object to canvasObjectsController: %@", canvasObject);
+    [self.canvasObjectsController addObject:canvasObject];
     
-    M2ObjectView *view = [[M2ObjectView alloc] initWithFrame:NSMakeRect(30, 30, 500, 500)];
-    view.object = object;
+//    M2Object *object = [NSKeyedUnarchiver unarchiveObjectWithData:libObject.object];
+    
+//    M2ObjectView *view = [[M2ObjectView alloc] initWithFrame:];
+//    view.object = object;
     //    view.object = object1;
     // TODO: Create CanvasObject and shit
-    [self.canvasView addSubview:view];
+//    [self.canvasView addSubview:view];
     
 }
 

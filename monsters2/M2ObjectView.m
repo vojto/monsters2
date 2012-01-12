@@ -7,12 +7,13 @@
 //
 
 #import "M2ObjectView.h"
+#import "M2CanvasView.h"
 
 NSString * const M2ObjectViewSelectedNotification = @"M2ObjectViewSelected";
 
 @implementation M2ObjectView
 
-@synthesize object, isDragging, isResizing, isSelected, mouseDownLocation, mouseDownFrame, resizeHandle;
+@synthesize object, isDragging, isResizing, isSelected, mouseDownLocation, mouseDownFrame, resizeHandle, canvasView;
 
 - (id)initWithFrame:(NSRect)frame
 {
@@ -85,6 +86,7 @@ NSString * const M2ObjectViewSelectedNotification = @"M2ObjectViewSelected";
 - (void)mouseUp:(NSEvent *)theEvent {
     self.isDragging = NO;
     self.isResizing = NO;
+    [self.canvasView objectViewDidChange:self];
 }
 
 - (void)mouseDragged:(NSEvent *)theEvent {

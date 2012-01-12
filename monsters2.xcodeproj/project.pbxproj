@@ -21,6 +21,8 @@
 		99D783B414BD9E490005F6BB /* M2DocumentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D783B314BD9E490005F6BB /* M2DocumentController.m */; };
 		99D783E614BDA1A20005F6BB /* M2Shared.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99D783E414BDA1A20005F6BB /* M2Shared.xcdatamodeld */; };
 		99D783EC14BDA4B80005F6BB /* M2ObjectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99D783EB14BDA4B80005F6BB /* M2ObjectView.m */; };
+		99F9573614BEC10D00BF25F2 /* M2CanvasObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F9573514BEC10D00BF25F2 /* M2CanvasObject.m */; };
+		99F9573A14BEC3A600BF25F2 /* M2CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F9573914BEC3A600BF25F2 /* M2CanvasView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,10 @@
 		99D783E514BDA1A20005F6BB /* M2Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = M2Shared.xcdatamodel; sourceTree = "<group>"; };
 		99D783EA14BDA4B80005F6BB /* M2ObjectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2ObjectView.h; sourceTree = "<group>"; };
 		99D783EB14BDA4B80005F6BB /* M2ObjectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2ObjectView.m; sourceTree = "<group>"; };
+		99F9573414BEC10D00BF25F2 /* M2CanvasObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2CanvasObject.h; sourceTree = "<group>"; };
+		99F9573514BEC10D00BF25F2 /* M2CanvasObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2CanvasObject.m; sourceTree = "<group>"; };
+		99F9573814BEC3A600BF25F2 /* M2CanvasView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2CanvasView.h; sourceTree = "<group>"; };
+		99F9573914BEC3A600BF25F2 /* M2CanvasView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2CanvasView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +148,8 @@
 				99D783E414BDA1A20005F6BB /* M2Shared.xcdatamodeld */,
 				99452FEF14BE015D00CAD47A /* M2LibObject.h */,
 				99452FF014BE015D00CAD47A /* M2LibObject.m */,
+				99F9573414BEC10D00BF25F2 /* M2CanvasObject.h */,
+				99F9573514BEC10D00BF25F2 /* M2CanvasObject.m */,
 				99631B2714BDF0FC00E0576A /* M2Object.h */,
 				99631B2814BDF0FC00E0576A /* M2Object.m */,
 			);
@@ -164,6 +172,8 @@
 				99D783EB14BDA4B80005F6BB /* M2ObjectView.m */,
 				99452FE514BDFB3900CAD47A /* M2ResizeHandleView.h */,
 				99452FE614BDFB3900CAD47A /* M2ResizeHandleView.m */,
+				99F9573814BEC3A600BF25F2 /* M2CanvasView.h */,
+				99F9573914BEC3A600BF25F2 /* M2CanvasView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -241,6 +251,8 @@
 				99631B2914BDF0FC00E0576A /* M2Object.m in Sources */,
 				99452FE714BDFB3900CAD47A /* M2ResizeHandleView.m in Sources */,
 				99452FF114BE015D00CAD47A /* M2LibObject.m in Sources */,
+				99F9573614BEC10D00BF25F2 /* M2CanvasObject.m in Sources */,
+				99F9573A14BEC3A600BF25F2 /* M2CanvasView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "M2DocumentController.h"
+#import "M2CanvasObject.h"
 
 @interface M2Document : NSPersistentDocument
 
@@ -16,9 +17,11 @@
 @property (assign) IBOutlet NSArrayController *libObjectsController;
 
 @property (assign) IBOutlet NSView *canvasView;
+@property (assign) IBOutlet NSArrayController *canvasObjectsController;
 
 - (IBAction)testAction:(id)sender;
 - (IBAction)instantiateAction:(id)sender;
 
+//- (void)removeCanvasObject:(M2CanvasObject *)canvasObject;
 
 @end

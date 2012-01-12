@@ -10,7 +10,12 @@
 #import "M2Object.h"
 #import "M2ResizeHandleView.h"
 
+@class M2CanvasView;
+
 @interface M2ObjectView : NSView
+
+#pragma mark - Hierarchy
+@property (assign) M2CanvasView *canvasView;
 
 #pragma mark - Model
 @property (retain) M2Object *object;
