@@ -28,7 +28,6 @@ NSString * const M2ObjectViewSelectedNotification = @"M2ObjectViewSelected";
         self.resizeHandle = [[M2ResizeHandleView alloc] initWithFrame:NSMakeRect(frame.size.width-10, 0, 10, 10)];
         [self.resizeHandle setAutoresizingMask:NSViewMinXMargin];
         [self addSubview:self.resizeHandle];
-        RKObserveNotification(M2ObjectViewSelectedNotification, @selector(didSelectObjectView:));
     }
     
     return self;
@@ -122,17 +121,16 @@ NSString * const M2ObjectViewSelectedNotification = @"M2ObjectViewSelected";
 
 #pragma mark - Selecting
 
-- (void)didSelectObjectView:(NSNotification *)notif {
+- (void)deselect {
     self.isSelected = NO;
     [self setNeedsDisplay:YES];
 }
 
 - (void)makeSelected {
     if (!self.isSelected) {
-        RKPostNotification(@"M2ObjectViewSelected");
         [self.canvasView objectViewDidSelect:self];
         self.isSelected = YES;
-        [[self superview] addSubview:self];
+        [self.canvasView moveObjectViewToFront:self];
         [self setNeedsDisplay:YES];
     }
 }

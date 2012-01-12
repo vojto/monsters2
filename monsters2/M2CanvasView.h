@@ -17,4 +17,11 @@
 - (void)objectViewDidChange:(M2ObjectView *)objectView;
 - (void)objectViewDidSelect:(M2ObjectView *)objectView;
 
+#pragma mark - Generating image with contents
+- (NSImage *)contentsImage;
+- (NSImage *)thumbnailImage;
+
+#pragma mark - Moving order of objects
+- (void)moveObjectViewToFront:(M2ObjectView *)objectView;
+
 @end

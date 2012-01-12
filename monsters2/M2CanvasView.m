@@ -63,6 +63,9 @@
 }
 
 - (void)_updateSelection {
+    for (M2ObjectView *view in self.objectViews) {
+        [view deselect];
+    }
     M2ObjectView *objectView = [self _viewForSelection];
     if (objectView) [objectView makeSelected];
 }
@@ -96,6 +99,44 @@
     [[NSColor colorWithPatternImage:[NSImage imageNamed:@"canvas-pattern.png"]] set];
     NSRectFill(dirtyRect);
     [super drawRect:dirtyRect];
+}
+
+#pragma mark - Generating contents image
+
+- (NSImage *)contentsImage {
+    [self.objectsController setSelectionIndexes:[NSIndexSet indexSet]];
+    NSImage *image = [[NSImage alloc] initWithSize:self.bounds.size];
+    [image lockFocus];
+    for (M2ObjectView *subview in self.subviews) {
+        NSAffineTransform *transform = [NSAffineTransform transform];
+        [transform translateXBy:subview.frame.origin.x yBy:subview.frame.origin.y];
+        [transform concat];
+        
+        [subview drawRect:[subview bounds]];
+        
+        [transform invert];
+        [transform concat];
+    }
+    [image unlockFocus];
+    return image;
+}
+
+- (NSImage *)thumbnailImage {
+    NSImage *image = [self contentsImage];
+    NSSize originalSize = [image size];
+    NSImage *resizedImage = [[NSImage alloc] initWithSize:NSMakeSize(200, 200)];
+
+    [resizedImage lockFocus];
+    [image drawInRect:NSMakeRect(0, 0, 200, 200) fromRect:NSMakeRect(0, 0, originalSize.width, originalSize.height) operation:NSCompositeSourceOver fraction:1.0];
+    [resizedImage unlockFocus];
+
+    return resizedImage;
+}
+
+#pragma mark - Moving order of objects
+
+- (void)moveObjectViewToFront:(M2ObjectView *)objectView {
+    [self addSubview:objectView];
 }
 
 @end

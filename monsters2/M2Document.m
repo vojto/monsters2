@@ -12,11 +12,13 @@
 #import "M2LibObject.h"
 #import "M2ObjectView.h"
 #import "M2CanvasObject.h"
+#import "M2GalleryEntry.h"
 
 @implementation M2Document
 @synthesize libObjectsController;
 @synthesize canvasView;
 @synthesize canvasObjectsController;
+@synthesize galleryAddButton;
 
 - (id)init {
     self = [super init];
@@ -91,12 +93,14 @@
     [path curveToPoint:NSMakePoint(150.4812, 72.7409) controlPoint1:NSMakePoint(169.2829, 39.4951) controlPoint2:NSMakePoint(150.4812, 54.3797)];
     [path curveToPoint:NSMakePoint(192.4759, 105.9867) controlPoint1:NSMakePoint(150.4812, 91.1021) controlPoint2:NSMakePoint(169.2829, 105.9867)];
     [object2 addPath:path withBackground:[NSColor blackColor] stroke:[NSColor blackColor]];
-    
-//    M2LibObject *lib2 = [NSEntityDescription insertNewObjectForEntityForName:@"LibObject" inManagedObjectContext:self.sharedContext];
-//    lib2.object = [NSKeyedArchiver archivedDataWithRootObject:object2];
-//    lib2.name = @"Colorful Eye";
-//    [lib2 generateThumbnail];
-//    [self.sharedContext save:nil];
+
+    if (NO) {
+        M2LibObject *lib2 = [NSEntityDescription insertNewObjectForEntityForName:@"LibObject" inManagedObjectContext:self.sharedContext];
+        lib2.object = [NSKeyedArchiver archivedDataWithRootObject:object2];
+        lib2.name = @"Colorful Eye";
+        [lib2 generateThumbnail];
+        [self.sharedContext save:nil];
+    }
     /*
 
     M2LibObject *lib1 = [NSEntityDescription insertNewObjectForEntityForName:@"LibObject" inManagedObjectContext:self.sharedContext];
@@ -138,6 +142,65 @@
 - (void)removeAction:(id)sender {
     M2CanvasObject *selected = [[self.canvasObjectsController selectedObjects] lastObject];
     if (selected) [self.canvasObjectsController removeObject:selected];
+}
+
+#pragma mark - Adding to gallery
+
+- (BOOL)isSaved {
+    return !![self fileURL];
+}
+
+
+- (IBAction)galleryAddAction:(id)sender {
+    [[self window] makeFirstResponder:nil];
+
+    [self _saveFileToGallery];
+
+    // Create a gallery entry for that path
+    // Generate a thumbnail
+}
+
+- (void)_saveFileToGallery {
+    // Save file to Library/Gallery if it's not saved
+    NSString *name = [self displayName];
+    NSError *error = nil;
+    
+    NSURL *gallery = [[self.documentController applicationFilesDirectory] URLByAppendingPathComponent:@"Gallery"];
+    NSFileManager *manager = [NSFileManager defaultManager];
+    [manager createDirectoryAtURL:gallery withIntermediateDirectories:YES attributes:nil error:nil];
+    NSURL *url = [gallery URLByAppendingPathComponent:name];
+    if (![[url pathExtension] isEqualToString:@"xml"]) {
+        url = [url URLByAppendingPathExtension:@"xml"];
+    }
+    [self saveToURL:url ofType:@"XML" forSaveOperation:NSSaveOperation error:&error];
+    if (error) NSLog(@"Couldn't save file to gallery: %@", error);
+
+    M2GalleryEntry *entry = [M2GalleryEntry MR_findFirstByAttribute:@"path" withValue:[url path] inContext:self.sharedContext];
+    if (!entry) {
+        NSLog(@"Creating new gallery entry for %@", [url path]);
+        entry = [NSEntityDescription insertNewObjectForEntityForName:@"GalleryEntry" inManagedObjectContext:self.sharedContext];
+    }
+    
+    entry.name = name;
+    entry.path = [url path];
+    entry.thumbnail = [self _thumbnailData];
+    [self.sharedContext save:nil];
+}
+
+- (NSData *)_thumbnailData {
+    return [NSArchiver archivedDataWithRootObject:[self.canvasView thumbnailImage]];
+}
+
+- (IBAction)exportAction:(id)sender {
+}
+
+- (IBAction)printAction:(id)sender {
+}
+
+#pragma mark - General helpers
+
+- (NSWindow *)window {
+    return [[[self windowControllers] lastObject] window];
 }
 
 @end

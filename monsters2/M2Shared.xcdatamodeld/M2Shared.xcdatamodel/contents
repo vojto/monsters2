@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11C74" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="GalleryEntry" representedClassName="M2GalleryEntry" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbnail" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
     <entity name="LibObject" representedClassName="M2LibObject" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" defaultValueString="New Library Object" syncable="YES"/>
         <attribute name="object" optional="YES" attributeType="Binary" syncable="YES"/>
@@ -7,5 +12,6 @@
     </entity>
     <elements>
         <element name="LibObject" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="GalleryEntry" positionX="160" positionY="192" width="128" height="90"/>
     </elements>
 </model>

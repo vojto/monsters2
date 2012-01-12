@@ -30,7 +30,7 @@
 #pragma mark - Selection
 @property (assign) BOOL isSelected;
 
-- (void)didSelectObjectView:(NSNotification *)notif;
+- (void)deselect;
 - (void)makeSelected;
 
 #pragma mark - Rotation

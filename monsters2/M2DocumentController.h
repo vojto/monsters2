@@ -16,4 +16,6 @@
 
 - (void)saveShared;
 
+- (NSURL *)applicationFilesDirectory;
+
 @end

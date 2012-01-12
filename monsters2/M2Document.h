@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "M2DocumentController.h"
 #import "M2CanvasObject.h"
+#import "M2CanvasView.h"
 
 @interface M2Document : NSPersistentDocument
 
@@ -16,13 +17,26 @@
 @property (readonly) NSManagedObjectContext *sharedContext;
 @property (assign) IBOutlet NSArrayController *libObjectsController;
 
-@property (assign) IBOutlet NSView *canvasView;
+@property (assign) IBOutlet M2CanvasView *canvasView;
 @property (assign) IBOutlet NSArrayController *canvasObjectsController;
+
+@property (assign) IBOutlet NSButton *galleryAddButton;
 
 - (IBAction)testAction:(id)sender;
 - (IBAction)instantiateAction:(id)sender;
 - (IBAction)removeAction:(id)sender;
+- (IBAction)exportAction:(id)sender;
+- (IBAction)printAction:(id)sender;
+
+#pragma mark - Saving & gallery
+- (BOOL)isSaved;
+- (IBAction)galleryAddAction:(id)sender;
+- (void)_saveFileToGallery;
+- (NSData *)_thumbnailData;
 
 //- (void)removeCanvasObject:(M2CanvasObject *)canvasObject;
+
+#pragma mark - General helpers
+- (NSWindow *)window;
 
 @end
