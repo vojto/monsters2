@@ -21,6 +21,19 @@
     [self.objectsController addObserver:self forKeyPath:@"arrangedObjects" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:nil];
     [self.objectsController addObserver:self forKeyPath:@"selectedObjects" options:0 context:nil];
     [self.objectsController addObserver:self forKeyPath:@"selection.rotation" options:0 context:nil];
+    [self.objectsController addObserver:self forKeyPath:@"selection.isFlippedVertically" options:0 context:nil];
+    [self.objectsController addObserver:self forKeyPath:@"selection.isFlippedHorizontally" options:0 context:nil];
+}
+
+- (void)_updateView:(M2ObjectView *)view fromObject:(M2CanvasObject *)canvasObject {
+    M2Object *object = [NSKeyedUnarchiver unarchiveObjectWithData:canvasObject.object];
+    view.canvasView = self;
+    view.object = object;
+    view.rotation = [canvasObject.rotation floatValue];
+    view.isFlippedVertically = [canvasObject.isFlippedVertically boolValue];
+    view.isFlippedHorizontally = [canvasObject.isFlippedHorizontally boolValue];
+    [self addSubview:view];
+    [self.objectViews addObject:view];
 }
 
 - (void)_updateObjects {
@@ -28,14 +41,9 @@
     [self.objectViews removeAllObjects];
     
     for (M2CanvasObject *canvasObject in self.objectsController.arrangedObjects) {
-        M2Object *object = [NSKeyedUnarchiver unarchiveObjectWithData:canvasObject.object];
         NSRect rect = NSRectFromString(canvasObject.frame);
         M2ObjectView *view = [[M2ObjectView alloc] initWithFrame:rect];
-        view.canvasView = self;
-        view.object = object;
-        view.rotation = [canvasObject.rotation floatValue];
-        [self addSubview:view];
-        [self.objectViews addObject:view];
+        [self _updateView:view fromObject:canvasObject];
     }
 }
 
@@ -46,16 +54,17 @@
     return [self.objectViews objectAtIndex:index];
 }
 
-- (void)_updateSelection {
-    M2ObjectView *objectView = [self _viewForSelection];
-    if (objectView) [objectView makeSelected];
-}
-
-- (void)_updateRotationOfSelection {
+- (void)_updateSelectionFromSelectedObject {
     M2ObjectView *view = [self _viewForSelection];
     M2CanvasObject *object = [[self.objectsController selectedObjects] lastObject];
     if (!object) return;
-    [view rotate:[object.rotation floatValue]];
+    [self _updateView:view fromObject:object];
+    [view setNeedsDisplay:YES];
+}
+
+- (void)_updateSelection {
+    M2ObjectView *objectView = [self _viewForSelection];
+    if (objectView) [objectView makeSelected];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -63,8 +72,8 @@
         [self _updateObjects];
     } else if ([keyPath isEqualToString:@"selectedObjects"]) {
         [self _updateSelection];
-    } else if ([keyPath isEqualToString:@"selection.rotation"]) {
-        [self _updateRotationOfSelection];
+    } else if ([keyPath rangeOfString:@"selection."].location != NSNotFound) {
+        [self _updateSelectionFromSelectedObject];
     }
 }
 

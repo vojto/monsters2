@@ -14,7 +14,7 @@ NSString * const M2ObjectViewSelectedNotification = @"M2ObjectViewSelected";
 @implementation M2ObjectView
 
 @synthesize object, isDragging, isResizing, isSelected, mouseDownLocation, mouseDownFrame, resizeHandle, canvasView;
-@synthesize rotation;
+@synthesize rotation, isFlippedHorizontally, isFlippedVertically;
 
 - (id)initWithFrame:(NSRect)frame
 {
@@ -23,6 +23,8 @@ NSString * const M2ObjectViewSelectedNotification = @"M2ObjectViewSelected";
         self.isDragging = NO;
         self.isResizing = NO;
         self.rotation = 0.0;
+        self.isFlippedVertically = NO;
+        self.isFlippedHorizontally = NO;
         self.resizeHandle = [[M2ResizeHandleView alloc] initWithFrame:NSMakeRect(frame.size.width-10, 0, 10, 10)];
         [self.resizeHandle setAutoresizingMask:NSViewMinXMargin];
         [self addSubview:self.resizeHandle];
@@ -65,10 +67,12 @@ NSString * const M2ObjectViewSelectedNotification = @"M2ObjectViewSelected";
         float x = size.width / object.bounds.width;
         float y = size.height / object.bounds.height;
         [transform translateXBy:size.width/2 yBy:size.height/2];
-        [transform rotateByDegrees:self.rotation];
+        [transform rotateByDegrees:-self.rotation];
+        if (self.isFlippedHorizontally) [transform scaleXBy:-1 yBy:1];
+        if (self.isFlippedVertically) [transform scaleXBy:1 yBy:-1];
         [transform translateXBy:-size.width/2 yBy:-size.height/2];
-//        [transform rotateByDegrees:10.0];
         [transform scaleXBy:x yBy:y];
+        
         [path transformUsingAffineTransform:transform];
         [background set];
         [path fill];
@@ -133,11 +137,6 @@ NSString * const M2ObjectViewSelectedNotification = @"M2ObjectViewSelected";
     }
 }
 
-#pragma mark - Rotation
 
-- (void)rotate:(CGFloat)aRotation {
-    self.rotation = aRotation;
-    [self setNeedsDisplay:YES];
-}
 
 @end

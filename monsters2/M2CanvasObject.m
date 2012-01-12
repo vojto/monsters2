@@ -14,5 +14,7 @@
 @dynamic object;
 @dynamic frame;
 @dynamic rotation;
+@dynamic isFlippedVertically;
+@dynamic isFlippedHorizontally;
 
 @end

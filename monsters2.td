@@ -7,8 +7,8 @@ Composing
 ✓ Multi-shape objects
 ✓ Stroke and fill colors in objects
 
-☐ Apply affine transforms from the inspector
-☐ Apply h/v flip from the inspector
+✓ Apply affine transforms from the inspector
+✓ Apply h/v flip from the inspector
 
 Library
 -------

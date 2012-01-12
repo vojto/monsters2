@@ -2,10 +2,12 @@
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11C74" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="CanvasObject" representedClassName="M2CanvasObject" syncable="YES">
         <attribute name="frame" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isFlippedHorizontally" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="isFlippedVertically" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="object" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="rotation" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CanvasObject" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="CanvasObject" positionX="160" positionY="192" width="128" height="120"/>
     </elements>
 </model>

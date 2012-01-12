@@ -15,5 +15,7 @@
 @property (nonatomic, retain) NSData * object;
 @property (nonatomic, retain) NSString * frame;
 @property (nonatomic, retain) NSNumber * rotation;
+@property (nonatomic, retain) NSNumber * isFlippedHorizontally;
+@property (nonatomic, retain) NSNumber * isFlippedVertically;
 
 @end

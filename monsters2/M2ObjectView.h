@@ -35,6 +35,9 @@
 
 #pragma mark - Rotation
 @property (assign) CGFloat rotation;
-- (void)rotate:(CGFloat)rotation;
+
+#pragma mark - Flipping
+@property (assign) BOOL isFlippedVertically;
+@property (assign) BOOL isFlippedHorizontally;
 
 @end
