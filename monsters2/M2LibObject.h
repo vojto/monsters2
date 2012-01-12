@@ -14,5 +14,8 @@
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSData * object;
+@property (nonatomic, retain) NSData * thumbnail;
+
+- (void)generateThumbnail;
 
 @end

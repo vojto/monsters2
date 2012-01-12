@@ -12,7 +12,8 @@ Composing
 Library
 -------
 
-☐ Create thumbnail for object
+✓ Create thumbnail for library object
+● Display thumbnail in the library
 
 Canvas
 ------

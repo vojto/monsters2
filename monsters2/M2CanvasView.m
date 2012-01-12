@@ -69,4 +69,10 @@
     [self.objectsController setSelectedObjects:[NSArray arrayWithObject:canvasObject]];
 }
 
+- (void)drawRect:(NSRect)dirtyRect {
+    [[NSColor colorWithPatternImage:[NSImage imageNamed:@"canvas-pattern.png"]] set];
+    NSRectFill(dirtyRect);
+    [super drawRect:dirtyRect];
+}
+
 @end

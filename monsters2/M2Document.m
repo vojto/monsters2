@@ -92,10 +92,11 @@
     [path curveToPoint:NSMakePoint(192.4759, 105.9867) controlPoint1:NSMakePoint(150.4812, 91.1021) controlPoint2:NSMakePoint(169.2829, 105.9867)];
     [object2 addPath:path withBackground:[NSColor blackColor] stroke:[NSColor blackColor]];
     
-//    M2LibObject *lib2 = [NSEntityDescription insertNewObjectForEntityForName:@"LibObject" inManagedObjectContext:self.sharedContext];
-//    lib2.object = [NSKeyedArchiver archivedDataWithRootObject:object2];
-//    lib2.name = @"Colorful Eye";
-//    [self.sharedContext save:nil];
+    M2LibObject *lib2 = [NSEntityDescription insertNewObjectForEntityForName:@"LibObject" inManagedObjectContext:self.sharedContext];
+    lib2.object = [NSKeyedArchiver archivedDataWithRootObject:object2];
+    lib2.name = @"Colorful Eye";
+    [lib2 generateThumbnail];
+    [self.sharedContext save:nil];
     /*
 
     M2LibObject *lib1 = [NSEntityDescription insertNewObjectForEntityForName:@"LibObject" inManagedObjectContext:self.sharedContext];
@@ -114,10 +115,11 @@
 }
 
 - (IBAction)testAction:(id)sender {
-    NSLog(@"Running tests...");
-    NSLog(@"Document Context: %@", self.managedObjectContext);
-    NSLog(@"Shared Context: %@", [self sharedContext]);
+    NSLog(@"Saving shared context %@", self.sharedContext);
     [self.canvasView setNeedsDisplay:YES];
+    
+    [self.libObjectsController.arrangedObjects makeObjectsPerformSelector:@selector(generateThumbnail)];
+    
     [self.sharedContext save:nil];
 }
 

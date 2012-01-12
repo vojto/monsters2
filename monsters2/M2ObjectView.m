@@ -40,7 +40,7 @@ NSString * const M2ObjectViewSelectedNotification = @"M2ObjectViewSelected";
 //    NSRectFill([self bounds]);
     
     if (self.isSelected) {
-        [[NSColor blueColor] set];
+        [[NSColor grayColor] set];
         NSBezierPath *outline = [NSBezierPath bezierPathWithRect:[self bounds]];
         [outline setLineWidth:2.0];
         [outline stroke];
