@@ -1,0 +1,882 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>M2CanvasView Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 752)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Monsters2 </a></h1>
+				<a id="developerHome" href="../index.html">RINIK</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">M2CanvasView Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/objectViews">&nbsp;&nbsp;&nbsp;&nbsp;objectViews</option>
+	
+	<option value="//api/name/objectsController">&nbsp;&nbsp;&nbsp;&nbsp;objectsController</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/_canvasObjetForView:">&nbsp;&nbsp;&nbsp;&nbsp;- _canvasObjetForView:</option>
+	
+	<option value="//api/name/_updateObjects">&nbsp;&nbsp;&nbsp;&nbsp;- _updateObjects</option>
+	
+	<option value="//api/name/_updateSelectionFromSelectedObject">&nbsp;&nbsp;&nbsp;&nbsp;- _updateSelectionFromSelectedObject</option>
+	
+	<option value="//api/name/_updateView:fromObject:">&nbsp;&nbsp;&nbsp;&nbsp;- _updateView:fromObject:</option>
+	
+	<option value="//api/name/_viewForSelection">&nbsp;&nbsp;&nbsp;&nbsp;- _viewForSelection</option>
+	
+	<option value="//api/name/contentsImage">&nbsp;&nbsp;&nbsp;&nbsp;- contentsImage</option>
+	
+	<option value="//api/name/objectViewDidChange:">&nbsp;&nbsp;&nbsp;&nbsp;- objectViewDidChange:</option>
+	
+	<option value="//api/name/objectViewDidSelect:">&nbsp;&nbsp;&nbsp;&nbsp;- objectViewDidSelect:</option>
+	
+	<option value="//api/name/thumbnailImage">&nbsp;&nbsp;&nbsp;&nbsp;- thumbnailImage</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Updating models according to changes on canvas">Updating models according to changes on canvas</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Generating images of canvas">Generating images of canvas</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectViews">objectViews</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectsController">objectsController</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_canvasObjetForView:">_canvasObjetForView:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_updateObjects">_updateObjects</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_updateSelectionFromSelectedObject">_updateSelectionFromSelectedObject</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_updateView:fromObject:">_updateView:fromObject:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/_viewForSelection">_viewForSelection</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/contentsImage">contentsImage</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectViewDidChange:">objectViewDidChange:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectViewDidSelect:">objectViewDidSelect:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/thumbnailImage">thumbnailImage</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="M2CanvasView Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">M2CanvasView Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSView</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">M2CanvasView.h<br />M2CanvasView.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Responsible for drawing canvas itself and objects on it.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectsController">&nbsp;&nbsp;objectsController</a></code>
+		<span class="tooltip"><p>Objects controller used for key-value observing on changes to objects and
+requesting objects.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectViews">&nbsp;&nbsp;objectViews</a></code>
+		<span class="tooltip"><p>Ordered array of views used for matching between array of objects and views.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Updating models according to changes on canvas" name="task_Updating models according to changes on canvas"></a>
+						<h3 class="subsubtitle task-title">Updating models according to changes on canvas</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectViewDidChange:">&ndash;&nbsp;objectViewDidChange:</a></code>
+		<span class="tooltip"><p>This message is sent by object view when its properties are changed.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectViewDidSelect:">&ndash;&nbsp;objectViewDidSelect:</a></code>
+		<span class="tooltip"><p>This message is sent by object when it is selected.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Generating images of canvas" name="task_Generating images of canvas"></a>
+						<h3 class="subsubtitle task-title">Generating images of canvas</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/contentsImage">&ndash;&nbsp;contentsImage</a></code>
+		<span class="tooltip"><p>Generates image containing everything on canvas, but not any control views.
+Used for export or printing.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/thumbnailImage">&ndash;&nbsp;thumbnailImage</a></code>
+		<span class="tooltip"><p>Generates thumnail image from <a href="#//api/name/contentsImage">contentsImage</a>, but in smaller size.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_updateObjects">&ndash;&nbsp;_updateObjects</a></code>
+		<span class="tooltip"><p>Updates objects displayed on canvas from array controller.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_updateView:fromObject:">&ndash;&nbsp;_updateView:fromObject:</a></code>
+		<span class="tooltip"><p>Updates particular object on canvas from its model.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_viewForSelection">&ndash;&nbsp;_viewForSelection</a></code>
+		<span class="tooltip"><p>Returns view for selection in array controller.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_updateSelectionFromSelectedObject">&ndash;&nbsp;_updateSelectionFromSelectedObject</a></code>
+		<span class="tooltip"><p>Updates properties of object selected on canvas from object selected in
+array controller.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/_canvasObjetForView:">&ndash;&nbsp;_canvasObjetForView:</a></code>
+		<span class="tooltip"><p>Returns canvas model object for passed canvas view object</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/objectViews" title="objectViews"></a>
+	<h3 class="subsubtitle method-title">objectViews</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Ordered array of views used for matching between array of objects and views.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (retain) NSMutableArray *objectViews</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Ordered array of views used for matching between array of objects and views.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2CanvasView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectsController" title="objectsController"></a>
+	<h3 class="subsubtitle method-title">objectsController</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Objects controller used for key-value observing on changes to objects and
+requesting objects.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (assign) IBOutlet NSArrayController *objectsController</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Objects controller used for key-value observing on changes to objects and
+requesting objects.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2CanvasView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/_canvasObjetForView:" title="_canvasObjetForView:"></a>
+	<h3 class="subsubtitle method-title">_canvasObjetForView:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns canvas model object for passed canvas view object</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (M2CanvasObject *)_canvasObjetForView:(M2ObjectView *)<em>view</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns canvas model object for passed canvas view object</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2CanvasView+PrivateMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_updateObjects" title="_updateObjects"></a>
+	<h3 class="subsubtitle method-title">_updateObjects</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Updates objects displayed on canvas from array controller.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)_updateObjects</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Updates objects displayed on canvas from array controller.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2CanvasView+PrivateMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_updateSelectionFromSelectedObject" title="_updateSelectionFromSelectedObject"></a>
+	<h3 class="subsubtitle method-title">_updateSelectionFromSelectedObject</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Updates properties of object selected on canvas from object selected in
+array controller.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)_updateSelectionFromSelectedObject</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Updates properties of object selected on canvas from object selected in
+array controller.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2CanvasView+PrivateMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_updateView:fromObject:" title="_updateView:fromObject:"></a>
+	<h3 class="subsubtitle method-title">_updateView:fromObject:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Updates particular object on canvas from its model.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)_updateView:(M2ObjectView *)<em>view</em> fromObject:(M2CanvasObject *)<em>canvasObject</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Updates particular object on canvas from its model.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2CanvasView+PrivateMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/_viewForSelection" title="_viewForSelection"></a>
+	<h3 class="subsubtitle method-title">_viewForSelection</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns view for selection in array controller.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (M2ObjectView *)_viewForSelection</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns view for selection in array controller.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2CanvasView+PrivateMethods.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/contentsImage" title="contentsImage"></a>
+	<h3 class="subsubtitle method-title">contentsImage</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Generates image containing everything on canvas, but not any control views.
+Used for export or printing.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSImage *)contentsImage</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Generates image containing everything on canvas, but not any control views.
+Used for export or printing.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2CanvasView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectViewDidChange:" title="objectViewDidChange:"></a>
+	<h3 class="subsubtitle method-title">objectViewDidChange:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This message is sent by object view when its properties are changed.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)objectViewDidChange:(M2ObjectView *)<em>objectView</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This message is sent by object view when its properties are changed.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2CanvasView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectViewDidSelect:" title="objectViewDidSelect:"></a>
+	<h3 class="subsubtitle method-title">objectViewDidSelect:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This message is sent by object when it is selected.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)objectViewDidSelect:(M2ObjectView *)<em>objectView</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This message is sent by object when it is selected.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2CanvasView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/thumbnailImage" title="thumbnailImage"></a>
+	<h3 class="subsubtitle method-title">thumbnailImage</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Generates thumnail image from <a href="#//api/name/contentsImage">contentsImage</a>, but in smaller size.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSImage *)thumbnailImage</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Generates thumnail image from <a href="#//api/name/contentsImage">contentsImage</a>, but in smaller size.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2CanvasView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 RINIK. All rights reserved. (Last updated: 2012-01-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 752)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+		</script>
+	</body>
+</html>

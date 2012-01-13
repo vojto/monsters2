@@ -84,6 +84,7 @@
 		992BF65214C03827007EFE3D /* monsters-icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = "monsters-icon.icns"; path = "../monsters-icon.icns"; sourceTree = "<group>"; };
 		992BF65414C039AB007EFE3D /* M2AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2AppDelegate.h; sourceTree = "<group>"; };
 		992BF65514C039AB007EFE3D /* M2AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2AppDelegate.m; sourceTree = "<group>"; };
+		992BF66014C04D14007EFE3D /* M2CanvasView+PrivateMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "M2CanvasView+PrivateMethods.h"; sourceTree = "<group>"; };
 		99452FE514BDFB3900CAD47A /* M2ResizeHandleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2ResizeHandleView.h; sourceTree = "<group>"; };
 		99452FE614BDFB3900CAD47A /* M2ResizeHandleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2ResizeHandleView.m; sourceTree = "<group>"; };
 		99452FEF14BE015D00CAD47A /* M2LibObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2LibObject.h; sourceTree = "<group>"; };
@@ -296,12 +297,13 @@
 		99D783ED14BDA4BD0005F6BB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				99F9573814BEC3A600BF25F2 /* M2CanvasView.h */,
+				992BF66014C04D14007EFE3D /* M2CanvasView+PrivateMethods.h */,
+				99F9573914BEC3A600BF25F2 /* M2CanvasView.m */,
 				99D783EA14BDA4B80005F6BB /* M2ObjectView.h */,
 				99D783EB14BDA4B80005F6BB /* M2ObjectView.m */,
 				99452FE514BDFB3900CAD47A /* M2ResizeHandleView.h */,
 				99452FE614BDFB3900CAD47A /* M2ResizeHandleView.m */,
-				99F9573814BEC3A600BF25F2 /* M2CanvasView.h */,
-				99F9573914BEC3A600BF25F2 /* M2CanvasView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
