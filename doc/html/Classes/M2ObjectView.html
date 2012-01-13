@@ -1,0 +1,980 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>M2ObjectView Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 752)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Monsters2 </a></h1>
+				<a id="developerHome" href="../index.html">RINIK</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">M2ObjectView Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/canvasView">&nbsp;&nbsp;&nbsp;&nbsp;canvasView</option>
+	
+	<option value="//api/name/isDragging">&nbsp;&nbsp;&nbsp;&nbsp;isDragging</option>
+	
+	<option value="//api/name/isFlippedHorizontally">&nbsp;&nbsp;&nbsp;&nbsp;isFlippedHorizontally</option>
+	
+	<option value="//api/name/isFlippedVertically">&nbsp;&nbsp;&nbsp;&nbsp;isFlippedVertically</option>
+	
+	<option value="//api/name/isResizing">&nbsp;&nbsp;&nbsp;&nbsp;isResizing</option>
+	
+	<option value="//api/name/isSelected">&nbsp;&nbsp;&nbsp;&nbsp;isSelected</option>
+	
+	<option value="//api/name/mouseDownFrame">&nbsp;&nbsp;&nbsp;&nbsp;mouseDownFrame</option>
+	
+	<option value="//api/name/mouseDownLocation">&nbsp;&nbsp;&nbsp;&nbsp;mouseDownLocation</option>
+	
+	<option value="//api/name/object">&nbsp;&nbsp;&nbsp;&nbsp;object</option>
+	
+	<option value="//api/name/resizeHandle">&nbsp;&nbsp;&nbsp;&nbsp;resizeHandle</option>
+	
+	<option value="//api/name/rotation">&nbsp;&nbsp;&nbsp;&nbsp;rotation</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/deselect">&nbsp;&nbsp;&nbsp;&nbsp;- deselect</option>
+	
+	<option value="//api/name/makeSelected">&nbsp;&nbsp;&nbsp;&nbsp;- makeSelected</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Hierarchy">Hierarchy</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Model">Model</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Dragging &amp; Resizing">Dragging &amp; Resizing</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Selection">Selection</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Rotation">Rotation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Flipping">Flipping</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/canvasView">canvasView</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isDragging">isDragging</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isFlippedHorizontally">isFlippedHorizontally</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isFlippedVertically">isFlippedVertically</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isResizing">isResizing</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isSelected">isSelected</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mouseDownFrame">mouseDownFrame</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mouseDownLocation">mouseDownLocation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/object">object</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/resizeHandle">resizeHandle</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/rotation">rotation</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deselect">deselect</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/makeSelected">makeSelected</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="M2ObjectView Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">M2ObjectView Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSView</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">M2ObjectView.h<br />M2ObjectView.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Responsible for drawing one <a href="#//api/name/object">object</a></p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Hierarchy" name="task_Hierarchy"></a>
+						<h3 class="subsubtitle task-title">Hierarchy</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/canvasView">&nbsp;&nbsp;canvasView</a></code>
+		<span class="tooltip"><p>Reference back to parent canvas view</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Model" name="task_Model"></a>
+						<h3 class="subsubtitle task-title">Model</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/object">&nbsp;&nbsp;object</a></code>
+		<span class="tooltip"><p>Represented model</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Dragging &amp; Resizing" name="task_Dragging &amp; Resizing"></a>
+						<h3 class="subsubtitle task-title">Dragging &amp; Resizing</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/resizeHandle">&nbsp;&nbsp;resizeHandle</a></code>
+		<span class="tooltip"><p>Reference to resize handle <a href="#//api/name/object">object</a></p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isDragging">&nbsp;&nbsp;isDragging</a></code>
+		<span class="tooltip"><p>Boolean indicating whether <a href="#//api/name/object">object</a> is currently being dragged</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isResizing">&nbsp;&nbsp;isResizing</a></code>
+		<span class="tooltip"><p>Boolean indicating whether <a href="#//api/name/object">object</a> is currently being resized</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mouseDownLocation">&nbsp;&nbsp;mouseDownLocation</a></code>
+		<span class="tooltip"><p>Point of last location in the window, where mouse down event
+was received. Used for computing new position/size when dragging
+or resizing.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mouseDownFrame">&nbsp;&nbsp;mouseDownFrame</a></code>
+		<span class="tooltip"><p>Frame of view when last mouse down event was received. Used for
+computing new frame when dragging or resizing.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Selection" name="task_Selection"></a>
+						<h3 class="subsubtitle task-title">Selection</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isSelected">&nbsp;&nbsp;isSelected</a></code>
+		<span class="tooltip"><p>Boolean value indicating whether receiver is currentl selected.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deselect">&ndash;&nbsp;deselect</a></code>
+		<span class="tooltip"><p>Deselects receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/makeSelected">&ndash;&nbsp;makeSelected</a></code>
+		<span class="tooltip"><p>Selects receiver.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Rotation" name="task_Rotation"></a>
+						<h3 class="subsubtitle task-title">Rotation</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/rotation">&nbsp;&nbsp;rotation</a></code>
+		<span class="tooltip"><p>Rotation of receiver in degrees.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Flipping" name="task_Flipping"></a>
+						<h3 class="subsubtitle task-title">Flipping</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isFlippedVertically">&nbsp;&nbsp;isFlippedVertically</a></code>
+		<span class="tooltip"><p>Boolean value indicating whether receiver is currently flipped
+vertically.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isFlippedHorizontally">&nbsp;&nbsp;isFlippedHorizontally</a></code>
+		<span class="tooltip"><p>Boolean value indicating whether receiver is currently flipped
+horizontally.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/canvasView" title="canvasView"></a>
+	<h3 class="subsubtitle method-title">canvasView</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Reference back to parent canvas view</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (assign) M2CanvasView *canvasView</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Reference back to parent canvas view</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2ObjectView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isDragging" title="isDragging"></a>
+	<h3 class="subsubtitle method-title">isDragging</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Boolean indicating whether <a href="#//api/name/object">object</a> is currently being dragged</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (assign) BOOL isDragging</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Boolean indicating whether <a href="#//api/name/object">object</a> is currently being dragged</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2ObjectView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isFlippedHorizontally" title="isFlippedHorizontally"></a>
+	<h3 class="subsubtitle method-title">isFlippedHorizontally</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Boolean value indicating whether receiver is currently flipped
+horizontally.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (assign) BOOL isFlippedHorizontally</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Boolean value indicating whether receiver is currently flipped
+horizontally.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2ObjectView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isFlippedVertically" title="isFlippedVertically"></a>
+	<h3 class="subsubtitle method-title">isFlippedVertically</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Boolean value indicating whether receiver is currently flipped
+vertically.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (assign) BOOL isFlippedVertically</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Boolean value indicating whether receiver is currently flipped
+vertically.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2ObjectView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isResizing" title="isResizing"></a>
+	<h3 class="subsubtitle method-title">isResizing</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Boolean indicating whether <a href="#//api/name/object">object</a> is currently being resized</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (assign) BOOL isResizing</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Boolean indicating whether <a href="#//api/name/object">object</a> is currently being resized</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2ObjectView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isSelected" title="isSelected"></a>
+	<h3 class="subsubtitle method-title">isSelected</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Boolean value indicating whether receiver is currentl selected.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (assign) BOOL isSelected</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Boolean value indicating whether receiver is currentl selected.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2ObjectView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mouseDownFrame" title="mouseDownFrame"></a>
+	<h3 class="subsubtitle method-title">mouseDownFrame</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Frame of view when last mouse down event was received. Used for
+computing new frame when dragging or resizing.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (assign) NSRect mouseDownFrame</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Frame of view when last mouse down event was received. Used for
+computing new frame when dragging or resizing.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2ObjectView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mouseDownLocation" title="mouseDownLocation"></a>
+	<h3 class="subsubtitle method-title">mouseDownLocation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Point of last location in the window, where mouse down event
+was received. Used for computing new position/size when dragging
+or resizing.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (assign) NSPoint mouseDownLocation</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Point of last location in the window, where mouse down event
+was received. Used for computing new position/size when dragging
+or resizing.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2ObjectView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/object" title="object"></a>
+	<h3 class="subsubtitle method-title">object</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Represented model</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (retain) M2Object *object</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Represented model</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2ObjectView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/resizeHandle" title="resizeHandle"></a>
+	<h3 class="subsubtitle method-title">resizeHandle</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Reference to resize handle <a href="#//api/name/object">object</a></p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (retain) NSView *resizeHandle</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Reference to resize handle <a href="#//api/name/object">object</a></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2ObjectView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/rotation" title="rotation"></a>
+	<h3 class="subsubtitle method-title">rotation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Rotation of receiver in degrees.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (assign) CGFloat rotation</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Rotation of receiver in degrees.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2ObjectView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/deselect" title="deselect"></a>
+	<h3 class="subsubtitle method-title">deselect</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Deselects receiver.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)deselect</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Deselects receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2ObjectView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/makeSelected" title="makeSelected"></a>
+	<h3 class="subsubtitle method-title">makeSelected</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Selects receiver.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)makeSelected</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Selects receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2ObjectView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 RINIK. All rights reserved. (Last updated: 2012-01-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 752)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+		</script>
+	</body>
+</html>
