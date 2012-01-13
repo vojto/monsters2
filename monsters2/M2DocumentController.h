@@ -8,13 +8,28 @@
 
 #import <AppKit/AppKit.h>
 
+/**
+ Adds shared context management functionality to document controller. 
+*/
+
 @interface M2DocumentController : NSDocumentController
+
+/****************************************************************************
+ @name Core Data stack
+ ****************************************************************************/
 
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+/**
+ Saves shared context
+*/
 - (void)saveShared;
+
+/****************************************************************************
+ @name Helpers
+ ****************************************************************************/
 
 - (NSURL *)applicationFilesDirectory;
 

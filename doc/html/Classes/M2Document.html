@@ -1,0 +1,1125 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>M2Document Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.5 (build 752)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Monsters2 </a></h1>
+				<a id="developerHome" href="../index.html">RINIK</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">M2Document Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/canvasObjectsController">&nbsp;&nbsp;&nbsp;&nbsp;canvasObjectsController</option>
+	
+	<option value="//api/name/canvasView">&nbsp;&nbsp;&nbsp;&nbsp;canvasView</option>
+	
+	<option value="//api/name/documentController">&nbsp;&nbsp;&nbsp;&nbsp;documentController</option>
+	
+	<option value="//api/name/exportFormatButton">&nbsp;&nbsp;&nbsp;&nbsp;exportFormatButton</option>
+	
+	<option value="//api/name/exportView">&nbsp;&nbsp;&nbsp;&nbsp;exportView</option>
+	
+	<option value="//api/name/libObjectsController">&nbsp;&nbsp;&nbsp;&nbsp;libObjectsController</option>
+	
+	<option value="//api/name/sharedContext">&nbsp;&nbsp;&nbsp;&nbsp;sharedContext</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/exportAction:">&nbsp;&nbsp;&nbsp;&nbsp;- exportAction:</option>
+	
+	<option value="//api/name/exportFormats">&nbsp;&nbsp;&nbsp;&nbsp;- exportFormats</option>
+	
+	<option value="//api/name/exportToURL:withFormat:">&nbsp;&nbsp;&nbsp;&nbsp;- exportToURL:withFormat:</option>
+	
+	<option value="//api/name/galleryAddAction:">&nbsp;&nbsp;&nbsp;&nbsp;- galleryAddAction:</option>
+	
+	<option value="//api/name/instantiateAction:">&nbsp;&nbsp;&nbsp;&nbsp;- instantiateAction:</option>
+	
+	<option value="//api/name/isSaved">&nbsp;&nbsp;&nbsp;&nbsp;- isSaved</option>
+	
+	<option value="//api/name/printAction:">&nbsp;&nbsp;&nbsp;&nbsp;- printAction:</option>
+	
+	<option value="//api/name/removeAction:">&nbsp;&nbsp;&nbsp;&nbsp;- removeAction:</option>
+	
+	<option value="//api/name/window">&nbsp;&nbsp;&nbsp;&nbsp;- window</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_General helpers">General helpers</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Array controllers">Array controllers</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Views">Views</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Exporting">Exporting</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_General actions">General actions</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Saving and gallery">Saving and gallery</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/canvasObjectsController">canvasObjectsController</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/canvasView">canvasView</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/documentController">documentController</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/exportFormatButton">exportFormatButton</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/exportView">exportView</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/libObjectsController">libObjectsController</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedContext">sharedContext</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/exportAction:">exportAction:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/exportFormats">exportFormats</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/exportToURL:withFormat:">exportToURL:withFormat:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/galleryAddAction:">galleryAddAction:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/instantiateAction:">instantiateAction:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isSaved">isSaved</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/printAction:">printAction:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeAction:">removeAction:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/window">window</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="M2Document Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">M2Document Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSPersistentDocument</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">M2Document.h<br />M2Document.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Controls one open document. Part of Cocoa document-application hierarchy.</p>
+
+<p>Since this class is subclass of NSPersistentDocument, the managed object
+context is managed for us. This context is then used to persist document
+data.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="General helpers" name="task_General helpers"></a>
+						<h3 class="subsubtitle task-title">General helpers</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/documentController">&nbsp;&nbsp;documentController</a></code>
+		<span class="tooltip"><p>Property for quick access to document controller</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sharedContext">&nbsp;&nbsp;sharedContext</a></code>
+		<span class="tooltip"><p>Property for quick access to shared data context</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/window">&ndash;&nbsp;window</a></code>
+		<span class="tooltip"><p>Shortcut for retrieving <a href="#//api/name/window">window</a> of document</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Array controllers" name="task_Array controllers"></a>
+						<h3 class="subsubtitle task-title">Array controllers</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/libObjectsController">&nbsp;&nbsp;libObjectsController</a></code>
+		<span class="tooltip"><p>Controller for managing lib objects</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/canvasObjectsController">&nbsp;&nbsp;canvasObjectsController</a></code>
+		<span class="tooltip"><p>Controller for managing canvas objects</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Views" name="task_Views"></a>
+						<h3 class="subsubtitle task-title">Views</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/canvasView">&nbsp;&nbsp;canvasView</a></code>
+		<span class="tooltip"><p>Canvas view</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Exporting" name="task_Exporting"></a>
+						<h3 class="subsubtitle task-title">Exporting</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/exportView">&nbsp;&nbsp;exportView</a></code>
+		<span class="tooltip"><p>Accessory view for export panel. Contains format choice combo box.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/exportFormatButton">&nbsp;&nbsp;exportFormatButton</a></code>
+		<span class="tooltip"><p>Button for export format choice. Used when saving to determine
+selected format.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/exportAction:">&ndash;&nbsp;exportAction:</a></code>
+		<span class="tooltip"><p>Action for exporting current document</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/exportFormats">&ndash;&nbsp;exportFormats</a></code>
+		<span class="tooltip"><p>Returns list of available export formats. Used for interface binding.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/exportToURL:withFormat:">&ndash;&nbsp;exportToURL:withFormat:</a></code>
+		<span class="tooltip"><p>Exports current document to URL with specified format.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="General actions" name="task_General actions"></a>
+						<h3 class="subsubtitle task-title">General actions</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/instantiateAction:">&ndash;&nbsp;instantiateAction:</a></code>
+		<span class="tooltip"><p>Action for creating new view on canvas from library objects</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeAction:">&ndash;&nbsp;removeAction:</a></code>
+		<span class="tooltip"><p>Action for removing objects from canvas. Triggered by backspace
+key.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/printAction:">&ndash;&nbsp;printAction:</a></code>
+		<span class="tooltip"><p>Action for printing current document</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Saving and gallery" name="task_Saving and gallery"></a>
+						<h3 class="subsubtitle task-title">Saving and gallery</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isSaved">&ndash;&nbsp;isSaved</a></code>
+		<span class="tooltip"><p>Returns true if current document is saved</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/galleryAddAction:">&ndash;&nbsp;galleryAddAction:</a></code>
+		<span class="tooltip"><p>Action for adding document to gallery</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/canvasObjectsController" title="canvasObjectsController"></a>
+	<h3 class="subsubtitle method-title">canvasObjectsController</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Controller for managing canvas objects</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (assign) IBOutlet NSArrayController *canvasObjectsController</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Controller for managing canvas objects</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2Document.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/canvasView" title="canvasView"></a>
+	<h3 class="subsubtitle method-title">canvasView</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Canvas view</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (assign) IBOutlet M2CanvasView *canvasView</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Canvas view</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2Document.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/documentController" title="documentController"></a>
+	<h3 class="subsubtitle method-title">documentController</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Property for quick access to document controller</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (readonly) M2DocumentController *documentController</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Property for quick access to document controller</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2Document.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/exportFormatButton" title="exportFormatButton"></a>
+	<h3 class="subsubtitle method-title">exportFormatButton</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Button for export format choice. Used when saving to determine
+selected format.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (assign) IBOutlet NSPopUpButton *exportFormatButton</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Button for export format choice. Used when saving to determine
+selected format.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2Document.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/exportView" title="exportView"></a>
+	<h3 class="subsubtitle method-title">exportView</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Accessory view for export panel. Contains format choice combo box.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (assign) IBOutlet NSView *exportView</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Accessory view for export panel. Contains format choice combo box.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2Document.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/libObjectsController" title="libObjectsController"></a>
+	<h3 class="subsubtitle method-title">libObjectsController</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Controller for managing lib objects</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (assign) IBOutlet NSArrayController *libObjectsController</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Controller for managing lib objects</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2Document.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sharedContext" title="sharedContext"></a>
+	<h3 class="subsubtitle method-title">sharedContext</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Property for quick access to shared data context</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (readonly) NSManagedObjectContext *sharedContext</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Property for quick access to shared data context</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2Document.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/exportAction:" title="exportAction:"></a>
+	<h3 class="subsubtitle method-title">exportAction:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Action for exporting current document</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (IBAction)exportAction:(id)<em>sender</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Action for exporting current document</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2Document.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/exportFormats" title="exportFormats"></a>
+	<h3 class="subsubtitle method-title">exportFormats</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns list of available export formats. Used for interface binding.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSArray *)exportFormats</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns list of available export formats. Used for interface binding.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2Document.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/exportToURL:withFormat:" title="exportToURL:withFormat:"></a>
+	<h3 class="subsubtitle method-title">exportToURL:withFormat:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Exports current document to URL with specified format.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)exportToURL:(NSURL *)<em>url</em> withFormat:(NSString *)<em>format</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Exports current document to URL with specified format.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2Document.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/galleryAddAction:" title="galleryAddAction:"></a>
+	<h3 class="subsubtitle method-title">galleryAddAction:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Action for adding document to gallery</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (IBAction)galleryAddAction:(id)<em>sender</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Action for adding document to gallery</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2Document.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/instantiateAction:" title="instantiateAction:"></a>
+	<h3 class="subsubtitle method-title">instantiateAction:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Action for creating new view on canvas from library objects</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (IBAction)instantiateAction:(id)<em>sender</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Action for creating new view on canvas from library objects</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2Document.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isSaved" title="isSaved"></a>
+	<h3 class="subsubtitle method-title">isSaved</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns true if current document is saved</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (BOOL)isSaved</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns true if current document is saved</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2Document.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/printAction:" title="printAction:"></a>
+	<h3 class="subsubtitle method-title">printAction:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Action for printing current document</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (IBAction)printAction:(id)<em>sender</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Action for printing current document</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2Document.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeAction:" title="removeAction:"></a>
+	<h3 class="subsubtitle method-title">removeAction:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Action for removing objects from canvas. Triggered by backspace
+key.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (IBAction)removeAction:(id)<em>sender</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Action for removing objects from canvas. Triggered by backspace
+key.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2Document.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/window" title="window"></a>
+	<h3 class="subsubtitle method-title">window</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Shortcut for retrieving <a href="#//api/name/window">window</a> of document</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSWindow *)window</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Shortcut for retrieving <a href="#//api/name/window">window</a> of document</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2Document.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 RINIK. All rights reserved. (Last updated: 2012-01-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 752)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+		</script>
+	</body>
+</html>

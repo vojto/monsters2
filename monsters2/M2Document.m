@@ -14,12 +14,19 @@
 #import "M2CanvasObject.h"
 #import "M2GalleryEntry.h"
 
+@interface M2Document (PrivateMethods)
+
+- (void)_saveFileToGallery;
+- (NSData *)_thumbnailData;
+
+@end
+
 @implementation M2Document
 @synthesize exportFormatButton;
 @synthesize libObjectsController;
 @synthesize canvasView;
 @synthesize canvasObjectsController;
-@synthesize galleryAddButton;
+//@synthesize galleryAddButton;
 @synthesize exportView;
 
 - (id)init {

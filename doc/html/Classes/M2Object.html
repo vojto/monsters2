@@ -32,12 +32,28 @@
 	
 	
 	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/bounds">&nbsp;&nbsp;&nbsp;&nbsp;bounds</option>
+	
+	<option value="//api/name/paths">&nbsp;&nbsp;&nbsp;&nbsp;paths</option>
 	
 	
 	
 	
 	
 	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/addPath:">&nbsp;&nbsp;&nbsp;&nbsp;- addPath:</option>
+	
+	<option value="//api/name/addPath:withBackground:stroke:">&nbsp;&nbsp;&nbsp;&nbsp;- addPath:withBackground:stroke:</option>
 	
 	
 	
@@ -53,13 +69,37 @@
 
 
 
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Managing bounds">Managing bounds</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Managing paths">Managing paths</a></span></li>
+	
+</ul></li>
 
 
 
 
 
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/bounds">bounds</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/paths">paths</a></span></li>
+	
+</ul></li>
 
 
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addPath:">addPath:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addPath:withBackground:stroke:">addPath:withBackground:stroke:</a></span></li>
+	
+</ul></li>
 
 
 			</ul>
@@ -99,22 +139,246 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Táto trieda je modelom, ktorý reprezentuje jeden &ldquo;objekt&rdquo;, teda jednu časť príšerky.
-Je použitý v objektoch typu M2LibObject a M2CanvasObject pre skladovanie objektov
-v knižnici a pre pridávanie objektov na plátno.</p>
+						<p>Represents data in one object. This class is used in <a href="../Classes/M2LibObject.html">M2LibObject</a> to store
+objects in library and in M2CanvasObjects to compose objects on the canvas.</p>
 					</div>
 					
 					
 					
 					
 					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Managing bounds" name="task_Managing bounds"></a>
+						<h3 class="subsubtitle task-title">Managing bounds</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/bounds">&nbsp;&nbsp;bounds</a></code>
+		<span class="tooltip"><p>Size of objects. Bezier <a href="#//api/name/paths">paths</a> must be inside this <a href="#//api/name/bounds">bounds</a>.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Managing paths" name="task_Managing paths"></a>
+						<h3 class="subsubtitle task-title">Managing paths</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/paths">&nbsp;&nbsp;paths</a></code>
+		<span class="tooltip"><p>Array of <a href="#//api/name/paths">paths</a>. Each entry is a NSDictionary with the following keys:</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addPath:">&ndash;&nbsp;addPath:</a></code>
+		<span class="tooltip"><p>Adds path to object with default colors</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addPath:withBackground:stroke:">&ndash;&nbsp;addPath:withBackground:stroke:</a></code>
+		<span class="tooltip"><p>Adds path to object, with specified colors for background and stroke.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
 					
 					
 					
 					
 					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/bounds" title="bounds"></a>
+	<h3 class="subsubtitle method-title">bounds</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Size of objects. Bezier <a href="#//api/name/paths">paths</a> must be inside this <a href="#//api/name/bounds">bounds</a>.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (assign) NSSize bounds</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Size of objects. Bezier <a href="#//api/name/paths">paths</a> must be inside this <a href="#//api/name/bounds">bounds</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2Object.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/paths" title="paths"></a>
+	<h3 class="subsubtitle method-title">paths</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Array of <a href="#//api/name/paths">paths</a>. Each entry is a NSDictionary with the following keys:</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (retain) NSMutableArray *paths</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Array of <a href="#//api/name/paths">paths</a>. Each entry is a NSDictionary with the following keys:</p>
+
+<ul>
+<li><strong>path</strong>: NSBezierPath with path of object element</li>
+<li><strong>background</strong>: Background color of path</li>
+<li><strong>stroke</strong>: Stroke color of path</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2Object.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
 					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/addPath:" title="addPath:"></a>
+	<h3 class="subsubtitle method-title">addPath:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds path to object with default colors</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)addPath:(NSBezierPath *)<em>path</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds path to object with default colors</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2Object.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addPath:withBackground:stroke:" title="addPath:withBackground:stroke:"></a>
+	<h3 class="subsubtitle method-title">addPath:withBackground:stroke:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds path to object, with specified colors for background and stroke.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)addPath:(NSBezierPath *)<em>path</em> withBackground:(NSColor *)<em>background</em> stroke:(NSColor *)<em>stroke</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds path to object, with specified colors for background and stroke.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">M2Object.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
 					
 				</div>

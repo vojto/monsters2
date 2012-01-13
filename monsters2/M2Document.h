@@ -11,38 +11,121 @@
 #import "M2CanvasObject.h"
 #import "M2CanvasView.h"
 
+/**
+ Controls one open document. Part of Cocoa document-application hierarchy.
+ 
+ Since this class is subclass of NSPersistentDocument, the managed object
+ context is managed for us. This context is then used to persist document
+ data.
+*/
+ 
 @interface M2Document : NSPersistentDocument
 
+/****************************************************************************
+ @name General helpers
+****************************************************************************/
+
+/**
+ Property for quick access to document controller
+*/
 @property (readonly) M2DocumentController *documentController;
+
+/**
+ Property for quick access to shared data context
+*/
 @property (readonly) NSManagedObjectContext *sharedContext;
-@property (assign) IBOutlet NSArrayController *libObjectsController;
 
-@property (assign) IBOutlet M2CanvasView *canvasView;
-@property (assign) IBOutlet NSArrayController *canvasObjectsController;
-
-@property (assign) IBOutlet NSButton *galleryAddButton;
-@property (assign) IBOutlet NSView *exportView;
-@property (assign) IBOutlet NSPopUpButton *exportFormatButton;
-
-- (IBAction)testAction:(id)sender;
-- (IBAction)instantiateAction:(id)sender;
-- (IBAction)removeAction:(id)sender;
-- (IBAction)exportAction:(id)sender;
-- (IBAction)printAction:(id)sender;
-
-#pragma mark - Saving & gallery
-- (BOOL)isSaved;
-- (IBAction)galleryAddAction:(id)sender;
-- (void)_saveFileToGallery;
-- (NSData *)_thumbnailData;
-
-//- (void)removeCanvasObject:(M2CanvasObject *)canvasObject;
-
-#pragma mark - General helpers
+/**
+ Shortcut for retrieving window of document
+ */
 - (NSWindow *)window;
 
-#pragma mark - Exporting
+/****************************************************************************
+ @name Array controllers
+ ****************************************************************************/
+
+/**
+ Controller for managing lib objects
+*/
+@property (assign) IBOutlet NSArrayController *libObjectsController;
+
+/**
+ Controller for managing canvas objects
+*/
+@property (assign) IBOutlet NSArrayController *canvasObjectsController;
+
+/****************************************************************************
+ @name Views
+ ****************************************************************************/
+
+/**
+ Canvas view
+*/
+@property (assign) IBOutlet M2CanvasView *canvasView;
+
+/****************************************************************************
+ @name Exporting
+ ****************************************************************************/
+
+/**
+ Accessory view for export panel. Contains format choice combo box.
+*/
+@property (assign) IBOutlet NSView *exportView;
+
+/**
+ Button for export format choice. Used when saving to determine 
+ selected format.
+*/
+@property (assign) IBOutlet NSPopUpButton *exportFormatButton;
+
+/**
+ Action for exporting current document
+ */
+- (IBAction)exportAction:(id)sender;
+
+/**
+ Returns list of available export formats. Used for interface binding.
+ */
 - (NSArray *)exportFormats;
+
+/**
+ Exports current document to URL with specified format.
+ */
 - (void)exportToURL:(NSURL *)url withFormat:(NSString *)format;
+
+/****************************************************************************
+ @name General actions
+ ****************************************************************************/
+
+/**
+ Action for creating new view on canvas from library objects
+*/
+- (IBAction)instantiateAction:(id)sender;
+
+/**
+ Action for removing objects from canvas. Triggered by backspace
+ key.
+*/
+- (IBAction)removeAction:(id)sender;
+
+/**
+ Action for printing current document
+*/
+- (IBAction)printAction:(id)sender;
+
+/****************************************************************************
+ @name Saving and gallery
+ ****************************************************************************/
+
+/**
+ Returns true if current document is saved
+*/
+- (BOOL)isSaved;
+
+/**
+ Action for adding document to gallery
+*/
+- (IBAction)galleryAddAction:(id)sender;
+
 
 @end

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>M2DocumentController Class Reference</title>
+		<title>M2GalleryController Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">M2DocumentController Class Reference</h1>
+				<h1 class="hideInXcode">M2GalleryController Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -40,11 +40,7 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/managedObjectContext">&nbsp;&nbsp;&nbsp;&nbsp;managedObjectContext</option>
-	
-	<option value="//api/name/managedObjectModel">&nbsp;&nbsp;&nbsp;&nbsp;managedObjectModel</option>
-	
-	<option value="//api/name/persistentStoreCoordinator">&nbsp;&nbsp;&nbsp;&nbsp;persistentStoreCoordinator</option>
+	<option value="//api/name/arrayController">&nbsp;&nbsp;&nbsp;&nbsp;arrayController</option>
 	
 	
 	
@@ -53,9 +49,9 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/applicationFilesDirectory">&nbsp;&nbsp;&nbsp;&nbsp;- applicationFilesDirectory</option>
+	<option value="//api/name/openAction:">&nbsp;&nbsp;&nbsp;&nbsp;- openAction:</option>
 	
-	<option value="//api/name/saveShared">&nbsp;&nbsp;&nbsp;&nbsp;- saveShared</option>
+	<option value="//api/name/openEntry:">&nbsp;&nbsp;&nbsp;&nbsp;- openEntry:</option>
 	
 	
 	
@@ -73,9 +69,7 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Core Data stack">Core Data stack</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Helpers">Helpers</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Opening gallery entries">Opening gallery entries</a></span></li>
 	
 </ul></li>
 
@@ -85,11 +79,7 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/managedObjectContext">managedObjectContext</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/managedObjectModel">managedObjectModel</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/persistentStoreCoordinator">persistentStoreCoordinator</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/arrayController">arrayController</a></span></li>
 	
 </ul></li>
 
@@ -99,9 +89,9 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/applicationFilesDirectory">applicationFilesDirectory</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/openAction:">openAction:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveShared">saveShared</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/openEntry:">openEntry:</a></span></li>
 	
 </ul></li>
 
@@ -110,7 +100,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="M2DocumentController Class Reference" name="top"></a>
+				<a title="M2GalleryController Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -119,7 +109,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">M2DocumentController Class Reference</h1>
+						<h1 class="title title-header">M2GalleryController Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -127,10 +117,10 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">NSDocumentController</td>
+	<td class="specification-value">NSWindowController</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">M2DocumentController.h<br />M2DocumentController.m</td>
+	<td class="specification-value">M2GalleryController.h<br />M2GalleryController.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -140,7 +130,13 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Adds shared context management functionality to document controller.</p>
+						<p>Manages gallery window.</p>
+
+<ul>
+<li>Uses NSArrayController to manage gallery entries</li>
+<li>Implements <a href="#//api/name/openAction:">openAction:</a> to open gallery entry when its button is clicked</li>
+</ul>
+
 					</div>
 					
 					
@@ -152,51 +148,37 @@
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
-						<a title="Core Data stack" name="task_Core Data stack"></a>
-						<h3 class="subsubtitle task-title">Core Data stack</h3>
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/persistentStoreCoordinator">&nbsp;&nbsp;persistentStoreCoordinator</a></code>
-		<span class="tooltip"><p>Returns the persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. (The directory for the store is created, if necessary.)</p></span>
+		<code><a href="#//api/name/arrayController">&nbsp;&nbsp;arrayController</a></code>
+		<span class="tooltip"><p>Array controller responsible for managing gallery entries</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/managedObjectModel">&nbsp;&nbsp;managedObjectModel</a></code>
-		<span class="tooltip"><p>Creates if necessary and returns the managed object model for the application.</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/managedObjectContext">&nbsp;&nbsp;managedObjectContext</a></code>
-		<span class="tooltip"><p>Returns the managed object context for the application (which is already
-bound to the persistent store coordinator for the application.)</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/saveShared">&ndash;&nbsp;saveShared</a></code>
-		<span class="tooltip"><p>Saves shared context</p></span>
-	</span>
-	
 	
 </li>
 						</ul>
 						
 						
-						<a title="Helpers" name="task_Helpers"></a>
-						<h3 class="subsubtitle task-title">Helpers</h3>
+						<a title="Opening gallery entries" name="task_Opening gallery entries"></a>
+						<h3 class="subsubtitle task-title">Opening gallery entries</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/applicationFilesDirectory">&ndash;&nbsp;applicationFilesDirectory</a></code>
-		<span class="tooltip"><p>Returns the directory the application uses to store the Core Data store file. This code uses a directory named &ldquo;Monsters2&rdquo; in the user&rsquo;s Library directory.</p></span>
+		<code><a href="#//api/name/openAction:">&ndash;&nbsp;openAction:</a></code>
+		<span class="tooltip"><p>Action for opening gallery entry. Figures out the entry form passed sender.
+Sender has to be direct subview of collection view item.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/openEntry:">&ndash;&nbsp;openEntry:</a></code>
+		<span class="tooltip"><p>Opens document for passed in entry. Silently fails if there&rsquo;s an error.</p></span>
 	</span>
 	
 	
@@ -214,18 +196,17 @@ bound to the persistent store coordinator for the application.)</p></span>
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/managedObjectContext" title="managedObjectContext"></a>
-	<h3 class="subsubtitle method-title">managedObjectContext</h3>
+	<a name="//api/name/arrayController" title="arrayController"></a>
+	<h3 class="subsubtitle method-title">arrayController</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the managed object context for the application (which is already
-bound to the persistent store coordinator for the application.)</p>
+		<p>Array controller responsible for managing gallery entries</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext</code></div>
+	<div class="method-subsection method-declaration"><code>@property (assign) IBOutlet NSArrayController *arrayController</code></div>
 	
 	
 	
@@ -236,8 +217,7 @@ bound to the persistent store coordinator for the application.)</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Returns the managed object context for the application (which is already
-bound to the persistent store coordinator for the application.)</p>
+		<p>Array controller responsible for managing gallery entries</p>
 	</div>
 	
 	
@@ -248,85 +228,7 @@ bound to the persistent store coordinator for the application.)</p>
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">M2DocumentController.m</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/managedObjectModel" title="managedObjectModel"></a>
-	<h3 class="subsubtitle method-title">managedObjectModel</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Creates if necessary and returns the managed object model for the application.</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel</code></div>
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Creates if necessary and returns the managed object model for the application.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">M2DocumentController.m</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/persistentStoreCoordinator" title="persistentStoreCoordinator"></a>
-	<h3 class="subsubtitle method-title">persistentStoreCoordinator</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns the persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. (The directory for the store is created, if necessary.)</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator</code></div>
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Returns the persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. (The directory for the store is created, if necessary.)</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">M2DocumentController.m</code><br />
+		<code class="declared-in-ref">M2GalleryController.h</code><br />
 	</div>				
 	
 	
@@ -343,17 +245,18 @@ bound to the persistent store coordinator for the application.)</p>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/applicationFilesDirectory" title="applicationFilesDirectory"></a>
-	<h3 class="subsubtitle method-title">applicationFilesDirectory</h3>
+	<a name="//api/name/openAction:" title="openAction:"></a>
+	<h3 class="subsubtitle method-title">openAction:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the directory the application uses to store the Core Data store file. This code uses a directory named &ldquo;Monsters2&rdquo; in the user&rsquo;s Library directory.</p>
+		<p>Action for opening gallery entry. Figures out the entry form passed sender.
+Sender has to be direct subview of collection view item.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (NSURL *)applicationFilesDirectory</code></div>
+	<div class="method-subsection method-declaration"><code>- (IBAction)openAction:(id)<em>sender</em></code></div>
 	
 	
 	
@@ -364,7 +267,8 @@ bound to the persistent store coordinator for the application.)</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Returns the directory the application uses to store the Core Data store file. This code uses a directory named &ldquo;Monsters2&rdquo; in the user&rsquo;s Library directory.</p>
+		<p>Action for opening gallery entry. Figures out the entry form passed sender.
+Sender has to be direct subview of collection view item.</p>
 	</div>
 	
 	
@@ -375,24 +279,24 @@ bound to the persistent store coordinator for the application.)</p>
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">M2DocumentController.m</code><br />
+		<code class="declared-in-ref">M2GalleryController.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/saveShared" title="saveShared"></a>
-	<h3 class="subsubtitle method-title">saveShared</h3>
+	<a name="//api/name/openEntry:" title="openEntry:"></a>
+	<h3 class="subsubtitle method-title">openEntry:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Saves shared context</p>
+		<p>Opens document for passed in entry. Silently fails if there&rsquo;s an error.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)saveShared</code></div>
+	<div class="method-subsection method-declaration"><code>- (void)openEntry:(M2GalleryEntry *)<em>entry</em></code></div>
 	
 	
 	
@@ -403,7 +307,7 @@ bound to the persistent store coordinator for the application.)</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Saves shared context</p>
+		<p>Opens document for passed in entry. Silently fails if there&rsquo;s an error.</p>
 	</div>
 	
 	
@@ -414,7 +318,7 @@ bound to the persistent store coordinator for the application.)</p>
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">M2DocumentController.h</code><br />
+		<code class="declared-in-ref">M2GalleryController.h</code><br />
 	</div>				
 	
 	
