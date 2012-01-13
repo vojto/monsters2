@@ -23,6 +23,8 @@
 		9914268114BF4D2000B849BD /* MagicalRecordHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914267114BF4D2000B849BD /* MagicalRecordHelpers.m */; };
 		9914268214BF4D2000B849BD /* MRCoreDataAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914267414BF4D2000B849BD /* MRCoreDataAction.m */; };
 		9914268514BF510F00B849BD /* M2GalleryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914268414BF510F00B849BD /* M2GalleryController.m */; };
+		992BF65014C0381B007EFE3D /* monsters-icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 992BF64F14C0381B007EFE3D /* monsters-icon.icns */; };
+		992BF65314C03827007EFE3D /* monsters-icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 992BF65214C03827007EFE3D /* monsters-icon.icns */; };
 		99452FE714BDFB3900CAD47A /* M2ResizeHandleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99452FE614BDFB3900CAD47A /* M2ResizeHandleView.m */; };
 		99452FF114BE015D00CAD47A /* M2LibObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 99452FF014BE015D00CAD47A /* M2LibObject.m */; };
 		99631B2914BDF0FC00E0576A /* M2Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 99631B2814BDF0FC00E0576A /* M2Object.m */; };
@@ -77,6 +79,8 @@
 		9914267414BF4D2000B849BD /* MRCoreDataAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRCoreDataAction.m; sourceTree = "<group>"; };
 		9914268314BF510F00B849BD /* M2GalleryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2GalleryController.h; sourceTree = "<group>"; };
 		9914268414BF510F00B849BD /* M2GalleryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2GalleryController.m; sourceTree = "<group>"; };
+		992BF64F14C0381B007EFE3D /* monsters-icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "monsters-icon.icns"; sourceTree = "<group>"; };
+		992BF65214C03827007EFE3D /* monsters-icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = "monsters-icon.icns"; path = "../monsters-icon.icns"; sourceTree = "<group>"; };
 		99452FE514BDFB3900CAD47A /* M2ResizeHandleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2ResizeHandleView.h; sourceTree = "<group>"; };
 		99452FE614BDFB3900CAD47A /* M2ResizeHandleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2ResizeHandleView.m; sourceTree = "<group>"; };
 		99452FEF14BE015D00CAD47A /* M2LibObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2LibObject.h; sourceTree = "<group>"; };
@@ -301,6 +305,8 @@
 			isa = PBXGroup;
 			children = (
 				99F3C06114BEE28B00E61E05 /* canvas-pattern.png */,
+				992BF65214C03827007EFE3D /* monsters-icon.icns */,
+				992BF64F14C0381B007EFE3D /* monsters-icon.icns */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -360,6 +366,8 @@
 				99D783A614BD958D0005F6BB /* M2Document.xib in Resources */,
 				99D783A914BD958D0005F6BB /* MainMenu.xib in Resources */,
 				99F3C06214BEE28B00E61E05 /* canvas-pattern.png in Resources */,
+				992BF65014C0381B007EFE3D /* monsters-icon.icns in Resources */,
+				992BF65314C03827007EFE3D /* monsters-icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
