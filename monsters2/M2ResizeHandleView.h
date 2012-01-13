@@ -8,6 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
+/**
+ Draws resize handle for resizing objects on canvas
+ */
 @interface M2ResizeHandleView : NSView
 
 @end

@@ -12,32 +12,104 @@
 
 @class M2CanvasView;
 
+/**
+ Responsible for drawing one object
+ */
 @interface M2ObjectView : NSView
 
-#pragma mark - Hierarchy
+/****************************************************************************
+ @name Hierarchy
+ ****************************************************************************/
+
+/**
+ Reference back to parent canvas view
+ */
 @property (assign) M2CanvasView *canvasView;
 
-#pragma mark - Model
+/****************************************************************************
+ @name Model
+ ****************************************************************************/
+
+/**
+ Represented model
+ */
 @property (retain) M2Object *object;
 
-#pragma mark - Dragging & Resizing
+/****************************************************************************
+ @name Dragging & Resizing
+ ****************************************************************************/
+
+/**
+ Reference to resize handle object
+ 
+ @see M2ResizeHandle
+ */
 @property (retain) NSView *resizeHandle;
+
+/**
+ Boolean indicating whether object is currently being dragged
+ */
+
 @property (assign) BOOL isDragging;
+/**
+ Boolean indicating whether object is currently being resized
+ */
 @property (assign) BOOL isResizing;
+
+/**
+ Point of last location in the window, where mouse down event
+ was received. Used for computing new position/size when dragging
+ or resizing.
+ */
 @property (assign) NSPoint mouseDownLocation;
+
+/**
+ Frame of view when last mouse down event was received. Used for
+ computing new frame when dragging or resizing.
+ */
 @property (assign) NSRect mouseDownFrame;
 
-#pragma mark - Selection
+/****************************************************************************
+ @name Selection
+ ****************************************************************************/
+
+/**
+ Boolean value indicating whether receiver is currentl selected.
+ */
 @property (assign) BOOL isSelected;
 
+/**
+ Deselects receiver.
+ */
 - (void)deselect;
+/**
+ Selects receiver.
+ */
 - (void)makeSelected;
 
-#pragma mark - Rotation
+/****************************************************************************
+ @name Rotation
+ ****************************************************************************/
+
+/**
+ Rotation of receiver in degrees.
+ */
 @property (assign) CGFloat rotation;
 
-#pragma mark - Flipping
+/****************************************************************************
+ @name Flipping
+ ****************************************************************************/
+
+/**
+ Boolean value indicating whether receiver is currently flipped
+ vertically.
+ */
 @property (assign) BOOL isFlippedVertically;
+
+/**
+ Boolean value indicating whether receiver is currently flipped
+ horizontally.
+ */
 @property (assign) BOOL isFlippedHorizontally;
 
 @end
