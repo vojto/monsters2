@@ -13,6 +13,8 @@
 #import "M2ObjectView.h"
 #import "M2CanvasObject.h"
 #import "M2GalleryEntry.h"
+#import "XMLReader.h"
+#import "NSColor+HexParsing.h"
 
 @interface M2Document (PrivateMethods)
 
@@ -87,43 +89,7 @@
 //    [object1 addPath:path];
 //    object1.bounds = NSMakeSize(340, 360);
     
-    M2Object *object2 = [[M2Object alloc] init];
-    object2.bounds = NSMakeSize(295.0, 161.0);
-    NSBezierPath *path = [NSBezierPath bezierPath];
-    [path moveToPoint:NSMakePoint(10.4987, 60.9924)];
-    [path curveToPoint:NSMakePoint(278.4652, 74.4907) controlPoint1:NSMakePoint(34.4957, 112.9859) controlPoint2:NSMakePoint(138.9826, 227.9715)];
-    [path curveToPoint:NSMakePoint(10.4987, 60.9924) controlPoint1:NSMakePoint(185.9767, -35.4956) controlPoint2:NSMakePoint(31.996, 34.4957)];
-    [object2 addPath:path];
-    
-    path = [NSBezierPath bezierPath];
-    [path moveToPoint:NSMakePoint(192.4759, 105.9867)];
-    [path curveToPoint:NSMakePoint(234.4707, 72.7409) controlPoint1:NSMakePoint(215.669, 105.9867) controlPoint2:NSMakePoint(234.4707, 91.1021)];
-    [path curveToPoint:NSMakePoint(192.4759, 39.4951) controlPoint1:NSMakePoint(234.4707, 54.3797) controlPoint2:NSMakePoint(215.669, 39.4951)];
-    [path curveToPoint:NSMakePoint(150.4812, 72.7409) controlPoint1:NSMakePoint(169.2829, 39.4951) controlPoint2:NSMakePoint(150.4812, 54.3797)];
-    [path curveToPoint:NSMakePoint(192.4759, 105.9867) controlPoint1:NSMakePoint(150.4812, 91.1021) controlPoint2:NSMakePoint(169.2829, 105.9867)];
-    [object2 addPath:path withBackground:[NSColor blackColor] stroke:[NSColor blackColor]];
 
-    if (NO) {
-        M2LibObject *lib2 = [NSEntityDescription insertNewObjectForEntityForName:@"LibObject" inManagedObjectContext:self.sharedContext];
-        lib2.object = [NSKeyedArchiver archivedDataWithRootObject:object2];
-        lib2.name = @"Colorful Eye";
-        [lib2 generateThumbnail];
-        [self.sharedContext save:nil];
-    }
-    /*
-
-    M2LibObject *lib1 = [NSEntityDescription insertNewObjectForEntityForName:@"LibObject" inManagedObjectContext:self.sharedContext];
-    lib1.object = [NSKeyedArchiver archivedDataWithRootObject:object1];
-    lib1.name = @"Ghost";
-    [self.sharedContext save:nil];
-    */
-    
-    
-    
-//    M2ObjectView *view = [[M2ObjectView alloc] initWithFrame:NSMakeRect(30, 30, 500, 500)];
-//    view.object = object1;
-    
-//    [self.canvasView addSubview:view];
 
 }
 
@@ -253,5 +219,130 @@
                             printInfo:info];
     return op;
 }
+
+- (IBAction)importAction:(id)sender {
+    NSOpenPanel *panel = [NSOpenPanel openPanel];
+    panel.allowedFileTypes = [NSArray arrayWithObject:@"svg"];
+    [panel beginWithCompletionHandler:^(NSInteger result) {
+        if (result != NSFileHandlingPanelOKButton) return;
+//        [self performSelectorInBackground:@selector(importSVGByURL:) withObject:panel.URL];
+        [self importSVGByURL:panel.URL];
+    }];
+}
+
+typedef enum _M2PointType {
+    M2PointMove,
+    M2PointLine,
+    M2PointCurve
+} M2PointType;
+
+typedef struct _M2Point {
+    float x, y;
+    float c1x, c1y, c2x, c2y;
+    M2PointType type;
+} M2Point;
+
+- (void)_extractPointsFromData:(NSString *)data toCArray:(M2Point *)points count:(int *)count {
+    int i = 0;
+    data = [data stringByReplacingOccurrencesOfString:@"M " withString:@"$M "];
+    data = [data stringByReplacingOccurrencesOfString:@"L " withString:@"$L "];
+    data = [data stringByReplacingOccurrencesOfString:@"C " withString:@"$C "];
+    NSArray *comps = [data componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"$"]];
+    for (NSString *comp in comps) {
+        M2Point point;
+        if ([comp length] == 0) continue;
+        if ([comp characterAtIndex:0] == 'M') {
+            sscanf([comp cStringUsingEncoding:NSUTF8StringEncoding], "M %f %f", &point.x, &point.y);
+            point.type = M2PointMove;
+        } else if ([comp characterAtIndex:0] == 'L') {
+            sscanf([comp cStringUsingEncoding:NSUTF8StringEncoding], "L %f %f", &point.x, &point.y);
+            point.type = M2PointLine;
+        } else if ([comp characterAtIndex:0] == 'C') {
+            sscanf([comp cStringUsingEncoding:NSUTF8StringEncoding], "C %f %f %f %f %f %f", &point.c1x, &point.c1y, &point.c2x, &point.c2y, &point.x, &point.y);
+            point.type = M2PointCurve;
+        }
+        points[i++] = point;
+        *count = i;
+    }
+
+    // Add zero to the end of array maybe?
+}
+
+//- (void)_cropPoints:(M2Point *)points count:(int)count {
+//    float minX = -1, maxX = -1, minY = -1, maxY = -1;
+//    
+//    for (int i = 0; i < count; i++) {
+//        if (points[i].x < minX || minX == -1) minX = points[i].x;
+//        if (points[i].x > maxX || maxX == -1) maxX = points[i].x;
+//        if (points[i].y < minY || minY == -1) minY = points[i].y;
+//        if (points[i].y > maxY || maxY == -1) maxY = points[i].x;
+//    }
+//    
+//    NSLog(@"Here are the maxims: %f %f %f %f", minX, maxX, minY, maxY);
+//}
+
+- (void)importSVGByURL:(NSURL *)url {
+    NSError *error = nil;
+    NSString *contents = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
+    if (error) [NSApp presentError:error];
+    NSDictionary *data = [XMLReader dictionaryForXMLString:contents error:&error];
+    if (error) [NSApp presentError:error];
+    
+    // Fugly parsing code. Don't look. Don't. Look.
+    NSDictionary *svg = [data objectForKey:@"svg"];
+    int width = [[svg objectForKey:@"@width"] intValue];
+    int height = [[svg objectForKey:@"@height"] intValue];
+    NSArray *groups = [[svg objectForKey:@"g"] objectForKey:@"g"];
+    for (NSDictionary *group in groups) {
+        NSArray *paths = [group objectForKey:@"path"];
+        M2Object *object = [[M2Object alloc] init];
+        object.bounds = NSMakeSize(width, height);
+        for (NSDictionary *path in paths) {
+            M2Point points[200];
+            int count;
+            NSBezierPath *path2 = [NSBezierPath bezierPath];
+            NSString *data = [path objectForKey:@"@d"];
+            NSString *fill = [[path objectForKey:@"@fill"] stringByReplacingOccurrencesOfString:@"#" withString:@""];
+            NSColor *color;
+            if (fill) {
+                color = [NSColor colorWithHexColorString:fill];
+            } else {
+                color = [NSColor clearColor];
+            }
+            [self _extractPointsFromData:data toCArray:points count:&count];
+//            [self _cropPoints:points count:count];
+            for (int i = 0; i < count; i++) {
+                points[i].y = height - points[i].y;
+                points[i].c1y = height - points[i].c1y;
+                points[i].c2y = height - points[i].c2y;
+                switch (points[i].type) {
+                    case M2PointMove:
+                        [path2 moveToPoint:NSMakePoint(points[i].x, points[i].y)];
+                        break;
+                    case M2PointLine:
+                        [path2 lineToPoint:NSMakePoint(points[i].x, points[i].y)];
+                        break;
+                    case M2PointCurve:
+                        [path2 curveToPoint:NSMakePoint(points[i].x, points[i].y) controlPoint1:NSMakePoint(points[i].c1x, points[i].c1y) controlPoint2:NSMakePoint(points[i].c2x, points[i].c2y)];
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            NSLog(@"Color: %@ %@", fill, color);
+            [object addPath:path2 withBackground:color stroke:[NSColor blackColor]];
+        }
+        M2LibObject *lib2 = [NSEntityDescription insertNewObjectForEntityForName:@"LibObject" inManagedObjectContext:self.sharedContext];
+        lib2.object = [NSKeyedArchiver archivedDataWithRootObject:object];
+        lib2.name = [group objectForKey:@"title"];
+        [lib2 generateThumbnail];
+        [self.sharedContext save:nil];
+    }
+//    NSLog(@"%@", paths);
+    
+}
+
+
 
 @end

@@ -23,6 +23,8 @@
 		9914268114BF4D2000B849BD /* MagicalRecordHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914267114BF4D2000B849BD /* MagicalRecordHelpers.m */; };
 		9914268214BF4D2000B849BD /* MRCoreDataAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914267414BF4D2000B849BD /* MRCoreDataAction.m */; };
 		9914268514BF510F00B849BD /* M2GalleryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914268414BF510F00B849BD /* M2GalleryController.m */; };
+		9914A5B314C1F88F00B4D95E /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914A5B214C1F88F00B4D95E /* XMLReader.m */; };
+		9914A5B614C20A5300B4D95E /* NSColor+HexParsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914A5B514C20A5300B4D95E /* NSColor+HexParsing.m */; };
 		992BF65014C0381B007EFE3D /* monsters-icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 992BF64F14C0381B007EFE3D /* monsters-icon.icns */; };
 		992BF65314C03827007EFE3D /* monsters-icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 992BF65214C03827007EFE3D /* monsters-icon.icns */; };
 		992BF65614C039AB007EFE3D /* M2AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 992BF65514C039AB007EFE3D /* M2AppDelegate.m */; };
@@ -80,6 +82,10 @@
 		9914267414BF4D2000B849BD /* MRCoreDataAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRCoreDataAction.m; sourceTree = "<group>"; };
 		9914268314BF510F00B849BD /* M2GalleryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2GalleryController.h; sourceTree = "<group>"; };
 		9914268414BF510F00B849BD /* M2GalleryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M2GalleryController.m; sourceTree = "<group>"; };
+		9914A5B114C1F88F00B4D95E /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
+		9914A5B214C1F88F00B4D95E /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
+		9914A5B414C20A5300B4D95E /* NSColor+HexParsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+HexParsing.h"; sourceTree = "<group>"; };
+		9914A5B514C20A5300B4D95E /* NSColor+HexParsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+HexParsing.m"; sourceTree = "<group>"; };
 		992BF64F14C0381B007EFE3D /* monsters-icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "monsters-icon.icns"; sourceTree = "<group>"; };
 		992BF65214C03827007EFE3D /* monsters-icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = "monsters-icon.icns"; path = "../monsters-icon.icns"; sourceTree = "<group>"; };
 		992BF65414C039AB007EFE3D /* M2AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M2AppDelegate.h; sourceTree = "<group>"; };
@@ -133,7 +139,10 @@
 		991425A614BF497400B849BD /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				9914A5AF14C1F88400B4D95E /* XML-to-NSDictionary */,
 				9914265414BF4D2000B849BD /* MagicalRecord */,
+				9914A5B414C20A5300B4D95E /* NSColor+HexParsing.h */,
+				9914A5B514C20A5300B4D95E /* NSColor+HexParsing.m */,
 			);
 			name = Vendor;
 			sourceTree = "<group>";
@@ -189,6 +198,15 @@
 				9914266214BF4D2000B849BD /* NSString+MagicalDataImport.m */,
 			);
 			path = DataImport;
+			sourceTree = "<group>";
+		};
+		9914A5AF14C1F88400B4D95E /* XML-to-NSDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				9914A5B114C1F88F00B4D95E /* XMLReader.h */,
+				9914A5B214C1F88F00B4D95E /* XMLReader.m */,
+			);
+			name = "XML-to-NSDictionary";
 			sourceTree = "<group>";
 		};
 		99D7838014BD958D0005F6BB = {
@@ -413,6 +431,8 @@
 				9914268214BF4D2000B849BD /* MRCoreDataAction.m in Sources */,
 				9914268514BF510F00B849BD /* M2GalleryController.m in Sources */,
 				992BF65614C039AB007EFE3D /* M2AppDelegate.m in Sources */,
+				9914A5B314C1F88F00B4D95E /* XMLReader.m in Sources */,
+				9914A5B614C20A5300B4D95E /* NSColor+HexParsing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

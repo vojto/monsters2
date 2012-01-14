@@ -127,5 +127,18 @@
 */
 - (IBAction)galleryAddAction:(id)sender;
 
+/****************************************************************************
+ @name Importing objects to library
+ ****************************************************************************/
+
+/**
+ Opens import dialog to select file to be imported.
+ */
+- (IBAction)importAction:(id)sender;
+
+/**
+ Imports SVG specified by URL
+ */
+- (void)importSVGByURL:(NSURL *)url;
 
 @end
