@@ -12,132 +12,132 @@
 #import "M2CanvasView.h"
 
 /**
- Controls one open document. Part of Cocoa document-application hierarchy.
- 
- Since this class is subclass of NSPersistentDocument, the managed object
- context is managed for us. This context is then used to persist document
- data.
+ Kontroluje jeden otvorený dokument. Je súčasťou hierarchie pre dokumentovú
+ aplikáciu podporovanú knižnicou Cocoa.
+
+ Keďže táto trieda dedí od triedy `NSPersistentDocument`, kontext spravovaný
+ objektov je spravovaný za nás. Tento kontext sa používa pre perzistenciu
+ dát v dokumente.
 */
  
 @interface M2Document : NSPersistentDocument
 
 /****************************************************************************
- @name General helpers
+ @name Všeobecné pomocné metódy
 ****************************************************************************/
 
 /**
- Property for quick access to document controller
+ Vlastnosť pre rýchly prístup ku ovládaču dokumentov
 */
 @property (readonly) M2DocumentController *documentController;
 
 /**
- Property for quick access to shared data context
+ Vlastnosť pre rýchly prístup k zdieľanému dátovému kontextu
 */
 @property (readonly) NSManagedObjectContext *sharedContext;
 
 /**
- Shortcut for retrieving window of document
+ Skratka pre nájdenie okná dokumentu
  */
 - (NSWindow *)window;
 
 /****************************************************************************
- @name Array controllers
+ @name Ovládače polí
  ****************************************************************************/
 
 /**
- Controller for managing lib objects
+ Ovládač pre správu objektov v knižnici
 */
 @property (assign) IBOutlet NSArrayController *libObjectsController;
 
 /**
- Controller for managing canvas objects
+ Ovládač pre správu objektov na plátne
 */
 @property (assign) IBOutlet NSArrayController *canvasObjectsController;
 
 /****************************************************************************
- @name Views
+ @name Zobrazenia
  ****************************************************************************/
 
 /**
- Canvas view
+ Zobrazenie plátna
 */
 @property (assign) IBOutlet M2CanvasView *canvasView;
 
 /****************************************************************************
- @name Exporting
+ @name Exportovanie
  ****************************************************************************/
 
 /**
- Accessory view for export panel. Contains format choice combo box.
+ Prídavné zobrazenie pre panel exportovania. Obsahuje políčko pre výber formátu.
 */
 @property (assign) IBOutlet NSView *exportView;
 
 /**
- Button for export format choice. Used when saving to determine 
- selected format.
+ Políčko pre výber formátu. Použité pri ukladaní na nájdenie vybraného formátu.
 */
 @property (assign) IBOutlet NSPopUpButton *exportFormatButton;
 
 /**
- Action for exporting current document
+ Akcia pre export aktuálneho dokumentu.
  */
 - (IBAction)exportAction:(id)sender;
 
 /**
- Returns list of available export formats. Used for interface binding.
+ Vracia zoznam dostupných formátov pre export. Použité pre naplnenie hodnôt
+ v políčku formátov.
  */
 - (NSArray *)exportFormats;
 
 /**
- Exports current document to URL with specified format.
+ Exportuje aktuálny dokument do súboru v zvolenej adrese so zvoleným formátom.
  */
 - (void)exportToURL:(NSURL *)url withFormat:(NSString *)format;
 
 /****************************************************************************
- @name General actions
+ @name Všeobecné akcie
  ****************************************************************************/
 
 /**
- Action for creating new view on canvas from library objects
+ Akcia pre vytvorenie nového zobrazenia na ploche z objektov v knižnici.
 */
 - (IBAction)instantiateAction:(id)sender;
 
 /**
- Action for removing objects from canvas. Triggered by backspace
- key.
+ Akcia pre odstránenie objektov z plochy. Spustená tlačítkom "vymazať".
 */
 - (IBAction)removeAction:(id)sender;
 
 /**
- Action for printing current document
+ Akcia pre tlač aktuálneho dokumentu. 
 */
 - (IBAction)printAction:(id)sender;
 
 /****************************************************************************
- @name Saving and gallery
+ @name Ukladanie a galéria
  ****************************************************************************/
 
 /**
- Returns true if current document is saved
+ Vráti pravdivú hodnotú, ak je aktuálny dokument uložený
 */
 - (BOOL)isSaved;
 
 /**
- Action for adding document to gallery
+ Akcia pre pridanie dokumentu do galérie.
 */
 - (IBAction)galleryAddAction:(id)sender;
 
 /****************************************************************************
- @name Importing objects to library
+ @name Importovanie objektov do galknižnice.
  ****************************************************************************/
 
 /**
- Opens import dialog to select file to be imported.
+ Otvorí dialóg pre vybranie súboru, ktorý má byť importovaný.
  */
 - (IBAction)importAction:(id)sender;
 
 /**
- Imports SVG specified by URL
+ Importuje SVG súbor umiestnený v špecifickej adrese.
  */
 - (void)importSVGByURL:(NSURL *)url;
 

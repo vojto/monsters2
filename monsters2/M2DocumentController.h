@@ -9,13 +9,13 @@
 #import <AppKit/AppKit.h>
 
 /**
- Adds shared context management functionality to document controller. 
+ Pridáva podporu spravovania zdieľaného modelu objektov k ovládaču dokumentov.
 */
 
 @interface M2DocumentController : NSDocumentController
 
 /****************************************************************************
- @name Core Data stack
+ @name Správa objektov vyžadovaných knižnicou Core Data
  ****************************************************************************/
 
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
@@ -23,12 +23,12 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 /**
- Saves shared context
+ Ukladanie zdieľaného kontextu
 */
 - (void)saveShared;
 
 /****************************************************************************
- @name Helpers
+ @name Pomocné metódy
  ****************************************************************************/
 
 - (NSURL *)applicationFilesDirectory;
