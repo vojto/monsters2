@@ -293,6 +293,7 @@ typedef struct _M2Point {
     int width = [[svg objectForKey:@"@width"] intValue];
     int height = [[svg objectForKey:@"@height"] intValue];
     NSArray *groups = [[svg objectForKey:@"g"] objectForKey:@"g"];
+    int imported = 0;
     for (NSDictionary *group in groups) {
         NSArray *paths = [group objectForKey:@"path"];
         M2Object *object = [[M2Object alloc] init];
@@ -338,6 +339,12 @@ typedef struct _M2Point {
         lib2.name = [group objectForKey:@"title"];
         [lib2 generateThumbnail];
         [self.sharedContext save:nil];
+        imported++;
+    }
+    
+    if (imported == 0) {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"SVG import failed." defaultButton:@"Ok" alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
+        [alert beginSheetModalForWindow:nil modalDelegate:nil didEndSelector:nil contextInfo:nil];
     }
 //    NSLog(@"%@", paths);
     
