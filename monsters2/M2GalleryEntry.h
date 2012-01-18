@@ -10,31 +10,31 @@
 #import <CoreData/CoreData.h>
 
 /**
- Reprezentuje položku v galérii
+ Represents a gallery entry.
  */
 @interface M2GalleryEntry : NSManagedObject
 
 /****************************************************************************
- @name Základné vlastnosti
+ @name Basic properties
  ****************************************************************************/
 
 /**
- Názov položky v galérií. Zadané používateľom. 
+ Gallery entry name. Entered by user.
  */
 @property (nonatomic, retain) NSString * name;
 
 /**
- Cesta k položke v galérii. Je automatický vybratá ovládačom, ktorý je
- zodpovedný za vytvorenie položky v galérii.
+ Path to gallery entry. Selected automatically by controller that is
+ responsible for create a gallery entry.
  */
 @property (nonatomic, retain) NSString * path;
 
 /****************************************************************************
- @name Práca s ukážkou
+ @name Working with thumbnail
  ****************************************************************************/
 
 /**
- Serializovaný obrázok ukážky pre položku v galérii.
+ Serialized image of thumbnail for gallery entry.
  */
 @property (nonatomic, retain) NSData * thumbnail;
 

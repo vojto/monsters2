@@ -10,34 +10,32 @@
 #import "M2GalleryEntry.h"
 
 /**
- Spravuje okno galérie.
+ Manages gallery window.
  
- - Používa triedu typu `NSArrayController` pre správu položiek v galérii
- - Implementuje akciu `openAction:` pre otvorenie položky z galérie po
- kliknutí na tlačítko.
-
+ - Uses NSArrayController to manage gallery entries
+ - Implements openAction: to open gallery entry when its button is clicked
+ 
  @see M2GalleryEntry
 */
 @interface M2GalleryController : NSWindowController
 
 /**
- Ovládač poľa zodpovedný za správu položiek v galérii
+ Array controller responsible for managing gallery entries
 */
 @property (assign) IBOutlet NSArrayController *arrayController;
 
 /****************************************************************************
- @name Otváranie položiek v galérii
+ @name Opening gallery entries
  ****************************************************************************/
 
 /**
- Akcia pre otváranie položky v galérii. Nájde objekt položky na základe 
- parametra `sender`. Tento parameter musí byť v hierarchií zobrazení priamo
- pod zobrazením položky kolekcie.
+ Action for opening gallery entry. Figures out the entry form passed sender.
+ Sender has to be direct subview of collection view item.
 */
 - (IBAction)openAction:(id)sender;
 
 /**
- Otvorí dokument pre danú položku. V prípade chyby neurobí nič.
+ Opens document for passed in entry. Silently fails if there's an error.
 */
 - (void)openEntry:(M2GalleryEntry *)entry;
 
